@@ -11,12 +11,17 @@ pytest-asyncio = "*"
 pytest-coverage = "*"
 mypy = "*"
 pdoc3 = "*"
+yapf = "*"
 
 [packages]
 click = "==7.0"
 mashumaro = "==1.12"
 sentinels = "==1.0.0"
 structlog = "*"
+asyncclick = "==7.0.9"
+munch = "*"
+fastapi = "*"
+hypercorn = "*"
 
 [requires]
 python_version = "3.8"

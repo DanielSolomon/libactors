@@ -26,8 +26,8 @@ $ python -m pytest tests/ # All test should pass!
 ## Documentation
 You can easily generate documentation using `pdoc3` (which is installed automatically if you followed [setup instructions](#instructions)):
 ```bash
-$ pdoc --html libactors
-$ google-chrome html/libactors/index.html
+$ pdoc --html -o docs/html libactors
+$ google-chrome docs/html/libactors/index.html
 ```
 
 ## Tutorial

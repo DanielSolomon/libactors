@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>libactors.aio.service API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>libactors.aio.service</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from . import exceptions
+from .service import Service
+
+__all__ = [
+    &#39;exceptions&#39;,
+    &#39;Service&#39;,
+]</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="libactors.aio.service.exceptions" href="exceptions.html">libactors.aio.service.exceptions</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="libactors.aio.service.service" href="service.html">libactors.aio.service.service</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="libactors.aio.service.Service"><code class="flex name class">
+<span>class <span class="ident">Service</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Service:
+    def __init__(self):
+        self._task: typing.Optional[asyncio.Task] = None
+        self._stop_event: asyncio.Event = asyncio.Event()
+        self._done_event: asyncio.Event = asyncio.Event()
+        self._ready_event: asyncio.Event = asyncio.Event()
+        self._done_callbacks: typing.List[ServiceCallback] = []
+        self._stop_callbacks: typing.List[ServiceCallback] = []
+
+    def start(self):
+        if self.started:
+            raise ServiceException(f&#39;Service {self} already started&#39;)
+
+        self._task = asyncio.ensure_future(self._service_worker())
+        self._task.add_done_callback(self._on_worker_done)
+
+    def stop(self):
+        logger.info(f&#39;Service {self} stop requested&#39;)
+
+        for callback in self._stop_callbacks:
+            asyncio.get_event_loop().call_soon(callback, self)
+
+        self._mark_stopping()
+
+    @property
+    def stopping(self):
+        return self._stop_event.is_set()
+
+    @property
+    def ready(self):
+        return self._ready_event.is_set()
+
+    @property
+    def done(self):
+        return self._done_event.is_set()
+
+    @property
+    def started(self):
+        return self._task is not None
+
+    def exception(self):
+        if self._task is None:
+            raise ServiceException(f&#39;Service {self} not started&#39;)
+
+        if not self._task.done():
+            raise ServiceException(f&#39;Service {self} not done&#39;)
+
+        return self._task.exception()
+
+    def add_stop_callback(self, callback: ServiceCallback):
+        if self._stop_event.is_set():
+            raise ServiceException(f&#39;Service {self} already stopping&#39;)
+
+        self._stop_callbacks.append(callback)
+
+    def add_done_callback(self, callback: ServiceCallback):
+        if self.started and self._task.done():
+            raise ServiceException(f&#39;Service {self} already done&#39;)
+
+        self._done_callbacks.append(callback)
+
+    async def wait(self):
+        if self._task is None:
+            raise ServiceException(f&#39;Service {self} not started&#39;)
+
+        await self._done_event.wait()
+
+    async def wait_ready(self):
+        if self._task is None:
+            raise ServiceException(f&#39;Service {self} not started&#39;)
+
+        await self._ready_event.wait()
+
+        if self._task is not None and self._task.done() and self._task.exception() is not None:
+            raise ServiceStartupException()
+
+    async def wait_stop(self):
+        await self._stop_event.wait()
+
+    async def setup(self):
+        pass
+
+    async def serve(self):
+        await self.wait_stop()
+
+    async def teardown(self):
+        pass
+
+    def _mark_ready(self):
+        self._ready_event.set()
+
+    def _mark_stopping(self):
+        self._stop_event.set()
+
+    def _mark_done(self):
+        self._done_event.set()
+
+    def _on_worker_done(self, task):
+        logger.info(f&#39;Service {self} completed&#39;)
+
+        exc = task.exception()
+        if exc is not None:
+            logger.exception(f&#39;Service {self} completed with failure&#39;, exc_info=exc)
+
+        # Fail any ready waiters
+        self._mark_ready()
+
+        # Call callbacks
+        for callback in self._done_callbacks:
+            asyncio.get_event_loop().call_soon(callback, self)
+
+        # Resolve done event.
+        self._mark_done()
+
+        # Resolve stopping event.
+        self._mark_stopping()
+
+    async def _service_worker(self):
+        setup_called = False
+        try:
+            # Wait for the our service
+            logger.info(f&#39;Service {self} setting up&#39;)
+            await self.setup()
+            setup_called = True
+
+            self._mark_ready()
+            logger.info(f&#39;Service {self} is serving&#39;)
+            await self.serve()
+        finally:
+            if setup_called:
+                logger.info(f&#39;Service {self} tearing down&#39;)
+                await self.teardown()
+
+            logger.info(f&#39;Service {self} stopping&#39;)
+
+            # Mark as stopping
+            self._mark_stopping()</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="libactors.actor.actor.Actor" href="../../actor/actor.html#libactors.actor.actor.Actor">Actor</a></li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="libactors.aio.service.Service.done"><code class="name">var <span class="ident">done</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def done(self):
+    return self._done_event.is_set()</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.ready"><code class="name">var <span class="ident">ready</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ready(self):
+    return self._ready_event.is_set()</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.started"><code class="name">var <span class="ident">started</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def started(self):
+    return self._task is not None</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.stopping"><code class="name">var <span class="ident">stopping</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def stopping(self):
+    return self._stop_event.is_set()</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="libactors.aio.service.Service.add_done_callback"><code class="name flex">
+<span>def <span class="ident">add_done_callback</span></span>(<span>self, callback: Callable[[ForwardRef('<a title="libactors.aio.service.Service" href="#libactors.aio.service.Service">Service</a>')], None])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_done_callback(self, callback: ServiceCallback):
+    if self.started and self._task.done():
+        raise ServiceException(f&#39;Service {self} already done&#39;)
+
+    self._done_callbacks.append(callback)</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.add_stop_callback"><code class="name flex">
+<span>def <span class="ident">add_stop_callback</span></span>(<span>self, callback: Callable[[ForwardRef('<a title="libactors.aio.service.Service" href="#libactors.aio.service.Service">Service</a>')], None])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_stop_callback(self, callback: ServiceCallback):
+    if self._stop_event.is_set():
+        raise ServiceException(f&#39;Service {self} already stopping&#39;)
+
+    self._stop_callbacks.append(callback)</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.exception"><code class="name flex">
+<span>def <span class="ident">exception</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def exception(self):
+    if self._task is None:
+        raise ServiceException(f&#39;Service {self} not started&#39;)
+
+    if not self._task.done():
+        raise ServiceException(f&#39;Service {self} not done&#39;)
+
+    return self._task.exception()</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.serve"><code class="name flex">
+<span>async def <span class="ident">serve</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def serve(self):
+    await self.wait_stop()</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.setup"><code class="name flex">
+<span>async def <span class="ident">setup</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def setup(self):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.start"><code class="name flex">
+<span>def <span class="ident">start</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def start(self):
+    if self.started:
+        raise ServiceException(f&#39;Service {self} already started&#39;)
+
+    self._task = asyncio.ensure_future(self._service_worker())
+    self._task.add_done_callback(self._on_worker_done)</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.stop"><code class="name flex">
+<span>def <span class="ident">stop</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stop(self):
+    logger.info(f&#39;Service {self} stop requested&#39;)
+
+    for callback in self._stop_callbacks:
+        asyncio.get_event_loop().call_soon(callback, self)
+
+    self._mark_stopping()</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.teardown"><code class="name flex">
+<span>async def <span class="ident">teardown</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def teardown(self):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.wait"><code class="name flex">
+<span>async def <span class="ident">wait</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def wait(self):
+    if self._task is None:
+        raise ServiceException(f&#39;Service {self} not started&#39;)
+
+    await self._done_event.wait()</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.wait_ready"><code class="name flex">
+<span>async def <span class="ident">wait_ready</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def wait_ready(self):
+    if self._task is None:
+        raise ServiceException(f&#39;Service {self} not started&#39;)
+
+    await self._ready_event.wait()
+
+    if self._task is not None and self._task.done() and self._task.exception() is not None:
+        raise ServiceStartupException()</code></pre>
+</details>
+</dd>
+<dt id="libactors.aio.service.Service.wait_stop"><code class="name flex">
+<span>async def <span class="ident">wait_stop</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def wait_stop(self):
+    await self._stop_event.wait()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="libactors.aio" href="../index.html">libactors.aio</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="libactors.aio.service.exceptions" href="exceptions.html">libactors.aio.service.exceptions</a></code></li>
+<li><code><a title="libactors.aio.service.service" href="service.html">libactors.aio.service.service</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="libactors.aio.service.Service" href="#libactors.aio.service.Service">Service</a></code></h4>
+<ul class="two-column">
+<li><code><a title="libactors.aio.service.Service.add_done_callback" href="#libactors.aio.service.Service.add_done_callback">add_done_callback</a></code></li>
+<li><code><a title="libactors.aio.service.Service.add_stop_callback" href="#libactors.aio.service.Service.add_stop_callback">add_stop_callback</a></code></li>
+<li><code><a title="libactors.aio.service.Service.done" href="#libactors.aio.service.Service.done">done</a></code></li>
+<li><code><a title="libactors.aio.service.Service.exception" href="#libactors.aio.service.Service.exception">exception</a></code></li>
+<li><code><a title="libactors.aio.service.Service.ready" href="#libactors.aio.service.Service.ready">ready</a></code></li>
+<li><code><a title="libactors.aio.service.Service.serve" href="#libactors.aio.service.Service.serve">serve</a></code></li>
+<li><code><a title="libactors.aio.service.Service.setup" href="#libactors.aio.service.Service.setup">setup</a></code></li>
+<li><code><a title="libactors.aio.service.Service.start" href="#libactors.aio.service.Service.start">start</a></code></li>
+<li><code><a title="libactors.aio.service.Service.started" href="#libactors.aio.service.Service.started">started</a></code></li>
+<li><code><a title="libactors.aio.service.Service.stop" href="#libactors.aio.service.Service.stop">stop</a></code></li>
+<li><code><a title="libactors.aio.service.Service.stopping" href="#libactors.aio.service.Service.stopping">stopping</a></code></li>
+<li><code><a title="libactors.aio.service.Service.teardown" href="#libactors.aio.service.Service.teardown">teardown</a></code></li>
+<li><code><a title="libactors.aio.service.Service.wait" href="#libactors.aio.service.Service.wait">wait</a></code></li>
+<li><code><a title="libactors.aio.service.Service.wait_ready" href="#libactors.aio.service.Service.wait_ready">wait_ready</a></code></li>
+<li><code><a title="libactors.aio.service.Service.wait_stop" href="#libactors.aio.service.Service.wait_stop">wait_stop</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -2,7 +2,6 @@ import asyncio
 import pathlib
 import typing
 
-
 from . import log
 from .actor import (
     Actor,
@@ -118,7 +117,6 @@ class Core:
             # The actor is saved in the private actors mapping.
             self._actors[actor_id] = actor
 
-            # TODO: Understand Service in backend-common.
             # Starting actor (creates serve task internally)
             actor.start()  # TODO: for completeness who is in charge of shutdown.
 

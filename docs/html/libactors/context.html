@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>libactors.context API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>libactors.context</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import asyncio
+import contextlib
+import functools
+import inspect
+import typing
+
+from .message import Envelope
+
+# NOTE: This checking trick is because of the Core typing hint used by Context, if we will import it in runtime it will cause a cyclic import.
+if typing.TYPE_CHECKING:
+    from .core import Core  # pragma: no cover
+
+__pdoc__ = {
+    &#39;Context.__call__&#39;: True
+}
+
+
+class Context:
+    &#34;&#34;&#34;Escorting object which encapsulate core and log access.
+    It is recommend to inherit from this context object to expand its functionality for external services and utilities.
+    &#34;&#34;&#34;
+    def __init__(
+        self,
+        core: &#39;Core&#39;,
+        log,
+        identity: str,
+        envelope: typing.Optional[Envelope] = None,
+        **kwargs
+    ):
+        &#34;&#34;&#34;Context object to access the core, log and self identity.
+
+        Args:
+            core (libactors.Core): Core object.
+            log: Logging-alike object.
+            identity (str): context identity (usually actor&#39;s id).
+            envelope (typing.Optional[libactors.Envelope], optional): Current processed evenlope if any. Defaults to None.
+
+        Kwargs:
+            Any key-word argument will be automatically bind to the log.
+        &#34;&#34;&#34;
+        self._core = core
+        self._log = log
+        self._identity = identity
+        self._envelope = envelope
+
+        # Bind identity and other kwargs.
+        if self._log:
+            kwargs.update(identity=identity)
+            self._log = self._log.bind(**kwargs)
+
+    def __repr__(self):
+        return f&#39;&#39;&#39;{self.__class__.__name__}(
+    core        = {self._core},
+    log         = {self._log},
+    identity    = {self._identity!r},
+    envelope    = {self._envelope},
+)&#39;&#39;&#39;
+
+    def __call__(self, *args, **kwargs) -&gt; &#39;Context&#39;:
+        &#34;&#34;&#34;Derive new context from the existing one.
+
+        Returns:
+            libactors.Context: Derived context.
+        &#34;&#34;&#34;
+        # TODO: buglet, we need to pass kwargs as well (for log bindings).
+        # Each keyword is overriden if passed, otherwise we use the current value of this context.
+        return Context(
+            core=kwargs.get(&#39;core&#39;) or self._core,
+            log=kwargs.get(&#39;log&#39;) or self._log,
+            identity=kwargs.get(&#39;identity&#39;) or self._identity,
+            envelope=kwargs.get(&#39;envelope&#39;) or self._envelope,
+        )
+
+    @contextlib.contextmanager
+    def bind(self, **bindings):
+        &#34;&#34;&#34;Context manager for temporarty log bindings.
+
+        Kwargs:
+            Any key-word argument will be automatically bind to the log.
+        &#34;&#34;&#34;
+        try:
+            # Saving old bindings logger object to restore.
+            old_log = self._log
+            # Bind.
+            self._log = self._log.bind(**bindings)
+            yield
+        finally:
+            # Restore old logger with old bindings.
+            self._log = old_log
+
+    def bind_function(**bindings):
+        &#34;&#34;&#34;Decorator to use for temporary log bindings as long as the decorated function runs.
+        The decorated function must have a context argument in its signature.
+
+        &gt;&gt;&gt; @Context.bind_function(foo=&#39;bar&#39;)
+        ... async def function(self, context):
+        ...     context.info(&#39;log&#39;)  # {&#39;foo&#39;: &#39;bar&#39;, &#39;event&#39;: &#39;log&#39;}
+        &#34;&#34;&#34;
+        def _bound(func):
+            def _get_context(func, *args, **kwargs):
+                &#34;&#34;&#34;Finds the value of the context argument in a function call.
+
+                Raises:
+                    RuntimeError: If `context` argument was not passed.
+                &#34;&#34;&#34;
+                signature = inspect.signature(func)
+                context = kwargs.get(&#39;context&#39;)
+                if context is None:
+                    try:
+                        context = args[list(signature.parameters.keys()).index(&#39;context&#39;)]
+                    except Exception:
+                        raise RuntimeError(&#39;cannot bind contextless function&#39;)
+                return context
+
+            # The following two wrappers binds before calling the function (separated for coroutine and regular functions).
+            @functools.wraps(func)
+            async def awrapper(*args, **kwargs):
+                with _get_context(func, *args, **kwargs).bind(**bindings):
+                    return await func(*args, **kwargs)
+
+            @functools.wraps(func)
+            def wrapper(*args, **kwargs):
+                with _get_context(func, *args, **kwargs).bind(**bindings):
+                    return func(*args, **kwargs)
+
+            return awrapper if asyncio.iscoroutinefunction(func) else wrapper
+
+        return _bound
+
+    @property
+    def core(self):
+        &#34;&#34;&#34;The internal core object.
+
+        Returns:
+            libactors.Core: The internal core object.
+        &#34;&#34;&#34;
+        return self._core
+
+    @property
+    def log(self) -&gt; typing.Callable:
+        &#34;&#34;&#34;The internal log function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal log function.
+        &#34;&#34;&#34;
+        return self._log.log
+
+    @property
+    def envelope(self) -&gt; typing.Optional[Envelope]:
+        &#34;&#34;&#34;Current handled envelope if any.
+
+        Returns:
+            typing.Optional[libactors.Envelope]: Current handled envelope or `None`.
+        &#34;&#34;&#34;
+        return self._envelope
+
+    @property
+    def sender(self):
+        return self._envelope.sender
+
+    @property
+    def identity(self):
+        return self._identity
+
+    @property
+    def debug(self):
+        &#34;&#34;&#34;The internal debug function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal debug function.
+        &#34;&#34;&#34;
+        return self._log.debug
+
+    @property
+    def info(self):
+        &#34;&#34;&#34;The internal info function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal info function.
+        &#34;&#34;&#34;
+        return self._log.info
+
+    @property
+    def warning(self):
+        &#34;&#34;&#34;The internal warning function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal warning function.
+        &#34;&#34;&#34;
+        return self._log.warning
+
+    @property
+    def error(self):
+        &#34;&#34;&#34;The internal error function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal error function.
+        &#34;&#34;&#34;
+        return self._log.error
+
+    @property
+    def fatal(self):
+        &#34;&#34;&#34;The internal fatal function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal fatal function.
+        &#34;&#34;&#34;
+        return self._log.fatal
+
+    @property
+    def exception(self):
+        &#34;&#34;&#34;The internal exception function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal exception function.
+        &#34;&#34;&#34;
+        return self._log.exception
+
+    async def create_actor(
+        self,
+        actor_id: str,
+        actor_cls,
+        log_bindings: typing.Dict[str, typing.Any] = {},
+        *args,
+        **kwargs
+    ):
+        &#34;&#34;&#34;Creates an actor of type `actor_cls`.
+
+        Args:
+            actor_id (str): Name of the newborn actor (suffix).
+            actor_cls (typing.Type[libactors.Actor]): Type of the newborn actor.
+            log_bindings (typing.Dict[str, typing.Any], optional): Log binding for derived context. Defaults to {}.
+
+        Returns:
+            libactors.ActorProxy: Actor proxy that wraps the newborn actor.
+        &#34;&#34;&#34;
+        return await self._core.create_actor(self, actor_id, actor_cls, *args, **kwargs)
+
+    def get_proxy(self, actor_id: str):
+        &#34;&#34;&#34;Get proxy of `actor_id` actor.
+
+        Args:
+            actor_id (str): The actor id to get proxy of.
+
+        Returns:
+            libactors.ActorProxy: The proxy of `actor_id`.
+        &#34;&#34;&#34;
+        return self._core.get_proxy(self, actor_id)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="libactors.context.Context"><code class="flex name class">
+<span>class <span class="ident">Context</span></span>
+<span>(</span><span>core: Core, log, identity: str, envelope: Optional[<a title="libactors.message.Envelope" href="message.html#libactors.message.Envelope">Envelope</a>] = None, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Escorting object which encapsulate core and log access.
+It is recommend to inherit from this context object to expand its functionality for external services and utilities.</p>
+<p>Context object to access the core, log and self identity.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>core</code></strong> :&ensp;<code><a title="libactors.Core" href="index.html#libactors.Core">Core</a></code></dt>
+<dd>Core object.</dd>
+<dt><strong><code>log</code></strong></dt>
+<dd>Logging-alike object.</dd>
+<dt><strong><code>identity</code></strong> :&ensp;<code>str</code></dt>
+<dd>context identity (usually actor's id).</dd>
+<dt><strong><code>envelope</code></strong> :&ensp;<code>typing.Optional[<a title="libactors.Envelope" href="index.html#libactors.Envelope">Envelope</a>]</code>, optional</dt>
+<dd>Current processed evenlope if any. Defaults to None.</dd>
+</dl>
+<h2 id="kwargs">Kwargs</h2>
+<p>Any key-word argument will be automatically bind to the log.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Context:
+    &#34;&#34;&#34;Escorting object which encapsulate core and log access.
+    It is recommend to inherit from this context object to expand its functionality for external services and utilities.
+    &#34;&#34;&#34;
+    def __init__(
+        self,
+        core: &#39;Core&#39;,
+        log,
+        identity: str,
+        envelope: typing.Optional[Envelope] = None,
+        **kwargs
+    ):
+        &#34;&#34;&#34;Context object to access the core, log and self identity.
+
+        Args:
+            core (libactors.Core): Core object.
+            log: Logging-alike object.
+            identity (str): context identity (usually actor&#39;s id).
+            envelope (typing.Optional[libactors.Envelope], optional): Current processed evenlope if any. Defaults to None.
+
+        Kwargs:
+            Any key-word argument will be automatically bind to the log.
+        &#34;&#34;&#34;
+        self._core = core
+        self._log = log
+        self._identity = identity
+        self._envelope = envelope
+
+        # Bind identity and other kwargs.
+        if self._log:
+            kwargs.update(identity=identity)
+            self._log = self._log.bind(**kwargs)
+
+    def __repr__(self):
+        return f&#39;&#39;&#39;{self.__class__.__name__}(
+    core        = {self._core},
+    log         = {self._log},
+    identity    = {self._identity!r},
+    envelope    = {self._envelope},
+)&#39;&#39;&#39;
+
+    def __call__(self, *args, **kwargs) -&gt; &#39;Context&#39;:
+        &#34;&#34;&#34;Derive new context from the existing one.
+
+        Returns:
+            libactors.Context: Derived context.
+        &#34;&#34;&#34;
+        # TODO: buglet, we need to pass kwargs as well (for log bindings).
+        # Each keyword is overriden if passed, otherwise we use the current value of this context.
+        return Context(
+            core=kwargs.get(&#39;core&#39;) or self._core,
+            log=kwargs.get(&#39;log&#39;) or self._log,
+            identity=kwargs.get(&#39;identity&#39;) or self._identity,
+            envelope=kwargs.get(&#39;envelope&#39;) or self._envelope,
+        )
+
+    @contextlib.contextmanager
+    def bind(self, **bindings):
+        &#34;&#34;&#34;Context manager for temporarty log bindings.
+
+        Kwargs:
+            Any key-word argument will be automatically bind to the log.
+        &#34;&#34;&#34;
+        try:
+            # Saving old bindings logger object to restore.
+            old_log = self._log
+            # Bind.
+            self._log = self._log.bind(**bindings)
+            yield
+        finally:
+            # Restore old logger with old bindings.
+            self._log = old_log
+
+    def bind_function(**bindings):
+        &#34;&#34;&#34;Decorator to use for temporary log bindings as long as the decorated function runs.
+        The decorated function must have a context argument in its signature.
+
+        &gt;&gt;&gt; @Context.bind_function(foo=&#39;bar&#39;)
+        ... async def function(self, context):
+        ...     context.info(&#39;log&#39;)  # {&#39;foo&#39;: &#39;bar&#39;, &#39;event&#39;: &#39;log&#39;}
+        &#34;&#34;&#34;
+        def _bound(func):
+            def _get_context(func, *args, **kwargs):
+                &#34;&#34;&#34;Finds the value of the context argument in a function call.
+
+                Raises:
+                    RuntimeError: If `context` argument was not passed.
+                &#34;&#34;&#34;
+                signature = inspect.signature(func)
+                context = kwargs.get(&#39;context&#39;)
+                if context is None:
+                    try:
+                        context = args[list(signature.parameters.keys()).index(&#39;context&#39;)]
+                    except Exception:
+                        raise RuntimeError(&#39;cannot bind contextless function&#39;)
+                return context
+
+            # The following two wrappers binds before calling the function (separated for coroutine and regular functions).
+            @functools.wraps(func)
+            async def awrapper(*args, **kwargs):
+                with _get_context(func, *args, **kwargs).bind(**bindings):
+                    return await func(*args, **kwargs)
+
+            @functools.wraps(func)
+            def wrapper(*args, **kwargs):
+                with _get_context(func, *args, **kwargs).bind(**bindings):
+                    return func(*args, **kwargs)
+
+            return awrapper if asyncio.iscoroutinefunction(func) else wrapper
+
+        return _bound
+
+    @property
+    def core(self):
+        &#34;&#34;&#34;The internal core object.
+
+        Returns:
+            libactors.Core: The internal core object.
+        &#34;&#34;&#34;
+        return self._core
+
+    @property
+    def log(self) -&gt; typing.Callable:
+        &#34;&#34;&#34;The internal log function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal log function.
+        &#34;&#34;&#34;
+        return self._log.log
+
+    @property
+    def envelope(self) -&gt; typing.Optional[Envelope]:
+        &#34;&#34;&#34;Current handled envelope if any.
+
+        Returns:
+            typing.Optional[libactors.Envelope]: Current handled envelope or `None`.
+        &#34;&#34;&#34;
+        return self._envelope
+
+    @property
+    def sender(self):
+        return self._envelope.sender
+
+    @property
+    def identity(self):
+        return self._identity
+
+    @property
+    def debug(self):
+        &#34;&#34;&#34;The internal debug function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal debug function.
+        &#34;&#34;&#34;
+        return self._log.debug
+
+    @property
+    def info(self):
+        &#34;&#34;&#34;The internal info function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal info function.
+        &#34;&#34;&#34;
+        return self._log.info
+
+    @property
+    def warning(self):
+        &#34;&#34;&#34;The internal warning function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal warning function.
+        &#34;&#34;&#34;
+        return self._log.warning
+
+    @property
+    def error(self):
+        &#34;&#34;&#34;The internal error function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal error function.
+        &#34;&#34;&#34;
+        return self._log.error
+
+    @property
+    def fatal(self):
+        &#34;&#34;&#34;The internal fatal function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal fatal function.
+        &#34;&#34;&#34;
+        return self._log.fatal
+
+    @property
+    def exception(self):
+        &#34;&#34;&#34;The internal exception function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal exception function.
+        &#34;&#34;&#34;
+        return self._log.exception
+
+    async def create_actor(
+        self,
+        actor_id: str,
+        actor_cls,
+        log_bindings: typing.Dict[str, typing.Any] = {},
+        *args,
+        **kwargs
+    ):
+        &#34;&#34;&#34;Creates an actor of type `actor_cls`.
+
+        Args:
+            actor_id (str): Name of the newborn actor (suffix).
+            actor_cls (typing.Type[libactors.Actor]): Type of the newborn actor.
+            log_bindings (typing.Dict[str, typing.Any], optional): Log binding for derived context. Defaults to {}.
+
+        Returns:
+            libactors.ActorProxy: Actor proxy that wraps the newborn actor.
+        &#34;&#34;&#34;
+        return await self._core.create_actor(self, actor_id, actor_cls, *args, **kwargs)
+
+    def get_proxy(self, actor_id: str):
+        &#34;&#34;&#34;Get proxy of `actor_id` actor.
+
+        Args:
+            actor_id (str): The actor id to get proxy of.
+
+        Returns:
+            libactors.ActorProxy: The proxy of `actor_id`.
+        &#34;&#34;&#34;
+        return self._core.get_proxy(self, actor_id)</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="libactors.context.Context.core"><code class="name">var <span class="ident">core</span></code></dt>
+<dd>
+<div class="desc"><p>The internal core object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.Core" href="index.html#libactors.Core">Core</a></code></dt>
+<dd>The internal core object.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def core(self):
+    &#34;&#34;&#34;The internal core object.
+
+    Returns:
+        libactors.Core: The internal core object.
+    &#34;&#34;&#34;
+    return self._core</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.debug"><code class="name">var <span class="ident">debug</span></code></dt>
+<dd>
+<div class="desc"><p>The internal debug function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal debug function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def debug(self):
+    &#34;&#34;&#34;The internal debug function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal debug function.
+    &#34;&#34;&#34;
+    return self._log.debug</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.envelope"><code class="name">var <span class="ident">envelope</span> : Optional[<a title="libactors.message.Envelope" href="message.html#libactors.message.Envelope">Envelope</a>]</code></dt>
+<dd>
+<div class="desc"><p>Current handled envelope if any.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Optional[<a title="libactors.Envelope" href="index.html#libactors.Envelope">Envelope</a>]</code></dt>
+<dd>Current handled envelope or <code>None</code>.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def envelope(self) -&gt; typing.Optional[Envelope]:
+    &#34;&#34;&#34;Current handled envelope if any.
+
+    Returns:
+        typing.Optional[libactors.Envelope]: Current handled envelope or `None`.
+    &#34;&#34;&#34;
+    return self._envelope</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.error"><code class="name">var <span class="ident">error</span></code></dt>
+<dd>
+<div class="desc"><p>The internal error function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal error function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def error(self):
+    &#34;&#34;&#34;The internal error function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal error function.
+    &#34;&#34;&#34;
+    return self._log.error</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.exception"><code class="name">var <span class="ident">exception</span></code></dt>
+<dd>
+<div class="desc"><p>The internal exception function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal exception function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def exception(self):
+    &#34;&#34;&#34;The internal exception function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal exception function.
+    &#34;&#34;&#34;
+    return self._log.exception</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.fatal"><code class="name">var <span class="ident">fatal</span></code></dt>
+<dd>
+<div class="desc"><p>The internal fatal function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal fatal function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def fatal(self):
+    &#34;&#34;&#34;The internal fatal function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal fatal function.
+    &#34;&#34;&#34;
+    return self._log.fatal</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.identity"><code class="name">var <span class="ident">identity</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def identity(self):
+    return self._identity</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.info"><code class="name">var <span class="ident">info</span></code></dt>
+<dd>
+<div class="desc"><p>The internal info function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal info function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def info(self):
+    &#34;&#34;&#34;The internal info function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal info function.
+    &#34;&#34;&#34;
+    return self._log.info</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.log"><code class="name">var <span class="ident">log</span> : Callable</code></dt>
+<dd>
+<div class="desc"><p>The internal log function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal log function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def log(self) -&gt; typing.Callable:
+    &#34;&#34;&#34;The internal log function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal log function.
+    &#34;&#34;&#34;
+    return self._log.log</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.sender"><code class="name">var <span class="ident">sender</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sender(self):
+    return self._envelope.sender</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.warning"><code class="name">var <span class="ident">warning</span></code></dt>
+<dd>
+<div class="desc"><p>The internal warning function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal warning function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def warning(self):
+    &#34;&#34;&#34;The internal warning function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal warning function.
+    &#34;&#34;&#34;
+    return self._log.warning</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="libactors.context.Context.__call__"><code class="name flex">
+<span>def <span class="ident">__call__</span></span>(<span>self, *args, **kwargs) ‑> <a title="libactors.context.Context" href="#libactors.context.Context">Context</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Derive new context from the existing one.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.Context" href="index.html#libactors.Context">Context</a></code></dt>
+<dd>Derived context.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __call__(self, *args, **kwargs) -&gt; &#39;Context&#39;:
+    &#34;&#34;&#34;Derive new context from the existing one.
+
+    Returns:
+        libactors.Context: Derived context.
+    &#34;&#34;&#34;
+    # TODO: buglet, we need to pass kwargs as well (for log bindings).
+    # Each keyword is overriden if passed, otherwise we use the current value of this context.
+    return Context(
+        core=kwargs.get(&#39;core&#39;) or self._core,
+        log=kwargs.get(&#39;log&#39;) or self._log,
+        identity=kwargs.get(&#39;identity&#39;) or self._identity,
+        envelope=kwargs.get(&#39;envelope&#39;) or self._envelope,
+    )</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.bind"><code class="name flex">
+<span>def <span class="ident">bind</span></span>(<span>self, **bindings)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Context manager for temporarty log bindings.</p>
+<h2 id="kwargs">Kwargs</h2>
+<p>Any key-word argument will be automatically bind to the log.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@contextlib.contextmanager
+def bind(self, **bindings):
+    &#34;&#34;&#34;Context manager for temporarty log bindings.
+
+    Kwargs:
+        Any key-word argument will be automatically bind to the log.
+    &#34;&#34;&#34;
+    try:
+        # Saving old bindings logger object to restore.
+        old_log = self._log
+        # Bind.
+        self._log = self._log.bind(**bindings)
+        yield
+    finally:
+        # Restore old logger with old bindings.
+        self._log = old_log</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.bind_function"><code class="name flex">
+<span>def <span class="ident">bind_function</span></span>(<span>**bindings)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Decorator to use for temporary log bindings as long as the decorated function runs.
+The decorated function must have a context argument in its signature.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; @Context.bind_function(foo='bar')
+... async def function(self, context):
+...     context.info('log')  # {'foo': 'bar', 'event': 'log'}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def bind_function(**bindings):
+    &#34;&#34;&#34;Decorator to use for temporary log bindings as long as the decorated function runs.
+    The decorated function must have a context argument in its signature.
+
+    &gt;&gt;&gt; @Context.bind_function(foo=&#39;bar&#39;)
+    ... async def function(self, context):
+    ...     context.info(&#39;log&#39;)  # {&#39;foo&#39;: &#39;bar&#39;, &#39;event&#39;: &#39;log&#39;}
+    &#34;&#34;&#34;
+    def _bound(func):
+        def _get_context(func, *args, **kwargs):
+            &#34;&#34;&#34;Finds the value of the context argument in a function call.
+
+            Raises:
+                RuntimeError: If `context` argument was not passed.
+            &#34;&#34;&#34;
+            signature = inspect.signature(func)
+            context = kwargs.get(&#39;context&#39;)
+            if context is None:
+                try:
+                    context = args[list(signature.parameters.keys()).index(&#39;context&#39;)]
+                except Exception:
+                    raise RuntimeError(&#39;cannot bind contextless function&#39;)
+            return context
+
+        # The following two wrappers binds before calling the function (separated for coroutine and regular functions).
+        @functools.wraps(func)
+        async def awrapper(*args, **kwargs):
+            with _get_context(func, *args, **kwargs).bind(**bindings):
+                return await func(*args, **kwargs)
+
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            with _get_context(func, *args, **kwargs).bind(**bindings):
+                return func(*args, **kwargs)
+
+        return awrapper if asyncio.iscoroutinefunction(func) else wrapper
+
+    return _bound</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.create_actor"><code class="name flex">
+<span>async def <span class="ident">create_actor</span></span>(<span>self, actor_id: str, actor_cls, log_bindings: Dict[str, Any] = {}, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates an actor of type <code>actor_cls</code>.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actor_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newborn actor (suffix).</dd>
+<dt><strong><code>actor_cls</code></strong> :&ensp;<code>typing.Type[<a title="libactors.Actor" href="index.html#libactors.Actor">Actor</a>]</code></dt>
+<dd>Type of the newborn actor.</dd>
+<dt><strong><code>log_bindings</code></strong> :&ensp;<code>typing.Dict[str, typing.Any]</code>, optional</dt>
+<dd>Log binding for derived context. Defaults to {}.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.ActorProxy" href="index.html#libactors.ActorProxy">ActorProxy</a></code></dt>
+<dd>Actor proxy that wraps the newborn actor.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_actor(
+    self,
+    actor_id: str,
+    actor_cls,
+    log_bindings: typing.Dict[str, typing.Any] = {},
+    *args,
+    **kwargs
+):
+    &#34;&#34;&#34;Creates an actor of type `actor_cls`.
+
+    Args:
+        actor_id (str): Name of the newborn actor (suffix).
+        actor_cls (typing.Type[libactors.Actor]): Type of the newborn actor.
+        log_bindings (typing.Dict[str, typing.Any], optional): Log binding for derived context. Defaults to {}.
+
+    Returns:
+        libactors.ActorProxy: Actor proxy that wraps the newborn actor.
+    &#34;&#34;&#34;
+    return await self._core.create_actor(self, actor_id, actor_cls, *args, **kwargs)</code></pre>
+</details>
+</dd>
+<dt id="libactors.context.Context.get_proxy"><code class="name flex">
+<span>def <span class="ident">get_proxy</span></span>(<span>self, actor_id: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get proxy of <code>actor_id</code> actor.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actor_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The actor id to get proxy of.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.ActorProxy" href="index.html#libactors.ActorProxy">ActorProxy</a></code></dt>
+<dd>The proxy of <code>actor_id</code>.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_proxy(self, actor_id: str):
+    &#34;&#34;&#34;Get proxy of `actor_id` actor.
+
+    Args:
+        actor_id (str): The actor id to get proxy of.
+
+    Returns:
+        libactors.ActorProxy: The proxy of `actor_id`.
+    &#34;&#34;&#34;
+    return self._core.get_proxy(self, actor_id)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="libactors" href="index.html">libactors</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="libactors.context.Context" href="#libactors.context.Context">Context</a></code></h4>
+<ul class="two-column">
+<li><code><a title="libactors.context.Context.__call__" href="#libactors.context.Context.__call__">__call__</a></code></li>
+<li><code><a title="libactors.context.Context.bind" href="#libactors.context.Context.bind">bind</a></code></li>
+<li><code><a title="libactors.context.Context.bind_function" href="#libactors.context.Context.bind_function">bind_function</a></code></li>
+<li><code><a title="libactors.context.Context.core" href="#libactors.context.Context.core">core</a></code></li>
+<li><code><a title="libactors.context.Context.create_actor" href="#libactors.context.Context.create_actor">create_actor</a></code></li>
+<li><code><a title="libactors.context.Context.debug" href="#libactors.context.Context.debug">debug</a></code></li>
+<li><code><a title="libactors.context.Context.envelope" href="#libactors.context.Context.envelope">envelope</a></code></li>
+<li><code><a title="libactors.context.Context.error" href="#libactors.context.Context.error">error</a></code></li>
+<li><code><a title="libactors.context.Context.exception" href="#libactors.context.Context.exception">exception</a></code></li>
+<li><code><a title="libactors.context.Context.fatal" href="#libactors.context.Context.fatal">fatal</a></code></li>
+<li><code><a title="libactors.context.Context.get_proxy" href="#libactors.context.Context.get_proxy">get_proxy</a></code></li>
+<li><code><a title="libactors.context.Context.identity" href="#libactors.context.Context.identity">identity</a></code></li>
+<li><code><a title="libactors.context.Context.info" href="#libactors.context.Context.info">info</a></code></li>
+<li><code><a title="libactors.context.Context.log" href="#libactors.context.Context.log">log</a></code></li>
+<li><code><a title="libactors.context.Context.sender" href="#libactors.context.Context.sender">sender</a></code></li>
+<li><code><a title="libactors.context.Context.warning" href="#libactors.context.Context.warning">warning</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>libactors.core API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>libactors.core</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import asyncio
+import pathlib
+import typing
+
+from . import log
+from .actor import (
+    Actor,
+    ActorProxy,
+    ShutdownMessage,
+)
+from .context import Context
+
+logger = log.get_logger(__name__)
+
+ACTOR_REPOSITORY: typing.Set[Actor] = set()
+
+CORE_IDENTITY = &#39;/&#39;
+
+
+class Core:
+    &#34;&#34;&#34;The libactors core, the core is resposible of:
+
+    * Actors creation.
+    * Actors lookup (returns `ActorProxy`).
+    * System shutdown (shuts down all created actors).
+
+    In most of the cases there will be only one `Core` in the system (it can be easily retrieved using the `get_core` function), but it is not enforced.
+    &#34;&#34;&#34;
+    def __init__(self, context: typing.Optional[Context] = None):
+        # NOTE: The context and the core are chicken-egg problem.
+        # On one side, the core uses context for logging and resolving actor proxies.
+        # On the other side, the core is accessible from the context so other actors will be able to ask their core stuff.
+        # Therefore, usually the core will be initialized without a context.
+        # After creating a context with that empty core it will be assigned to the core using the `set_context` function.
+        self._actors = dict()
+        self._lock = asyncio.Lock()
+        self._running = True
+        self._context = context
+
+    @property
+    def context(self) -&gt; Context:
+        return self._context
+
+    def set_context(self, context):
+        &#34;&#34;&#34;Context setter for core (replaces current internal context).
+
+        Args:
+            context (libactors.Context): New context to set.
+        &#34;&#34;&#34;
+        self._context = context
+
+    def is_actor_type_exists(self, actor_cls: typing.Type[Actor]) -&gt; bool:
+        &#34;&#34;&#34;Checks if actor of type `actor_cls` is already registered.
+
+        Args:
+            actor_cls (typing.Type[Actor]): Actor type to check if registered.
+
+        Returns:
+            bool: `True` iff `actor_cls` is registered.
+        &#34;&#34;&#34;
+        return actor_cls in ACTOR_REPOSITORY
+
+    def _generate_actor_id(self, base: str, actor_id: str):
+        # NOTE: it will not work on windows, since path separator is not &#39;/&#39;.
+        return str(pathlib.Path(base) / actor_id)
+
+    def _assert_running(self, msg: str = &#39;Core is not running&#39;):
+        if not self._running:
+            raise RuntimeError(msg)
+
+    async def create_actor(
+        self,
+        callee_context: Context,
+        actor_id: str,
+        actor_cls: typing.Type[Actor],
+        log_bindings: typing.Dict[str, typing.Any] = {},
+        *args,
+        **kwargs
+    ) -&gt; ActorProxy:
+        &#34;&#34;&#34;Creates an actor of type `actor_cls` with a given `actor_id` name.
+        args and kwargs are passed directly to the internal actor `__init__` function.
+
+        Args:
+            callee_context (Context): Callee context to derive new context for the newborn actor.
+            actor_id (str): Name of the newborn actor.
+            actor_cls (typing.Type[libactors.Actor]): Type of the newborn actor.
+            log_bindings (typing.Dict[str, typing.Any]): Log binding for derived context.
+
+        Raises:
+            RuntimeError: If `actor_id` already exists.
+
+        Returns:
+            ActorProxy: Actor proxy that wraps the newborn actor.
+        &#34;&#34;&#34;
+
+        self._assert_running()
+
+        actor_id = self._generate_actor_id(callee_context.identity, actor_id)
+
+        self.context.info(f&#39;creating actor: `{actor_cls}` with id: `{actor_id}`&#39;)
+        async with self._lock:
+            # Checking if core was shutdown.
+            self._assert_running(&#39;core is no longer running&#39;)
+
+            # Checking if `actor_id` already exists.
+            if actor_id in self._actors:
+                raise RuntimeError(f&#39;actor {actor_id} already exists&#39;)
+
+            # Creating actor and putting it in the internal actors mapping.
+            actor = actor_cls(  # type: ignore
+                # Derived context of the new created actor is expanded with new `log_bindings` and its new identity is set.
+                context     = callee_context(identity=actor_id, **log_bindings),
+                actor_id    = actor_id,
+                *args,
+                **kwargs
+            )
+            # The actor is saved in the private actors mapping.
+            self._actors[actor_id] = actor
+
+            # Starting actor (creates serve task internally)
+            actor.start()  # TODO: for completeness who is in charge of shutdown.
+
+            return ActorProxy(
+                actor=actor,
+                actor_id=actor_id,
+            )
+
+    async def remove_actor(self, actor_id: str):
+        &#34;&#34;&#34;Remove a shut-down actor
+
+        Args:
+            actor_id: ID of actor to remove
+
+        Raises:
+            RuntimeError if the core is not running
+            ValueError if the Actor is not shut down
+        &#34;&#34;&#34;
+        self._assert_running()
+
+        if actor_id not in self._actors:
+            self.context.warning(f&#39;remove_actor failed: no actor with id: {actor_id}&#39;)
+            return
+
+        actor = self._actors[actor_id]
+        if not actor.is_shutdown():
+            raise ValueError(&#39;Actor {actor_id} is not shut down&#39;)
+
+        del self._actors[actor_id]
+
+    async def shutdown(self):
+        &#34;&#34;&#34;Shuts down the core:
+
+        * Disable creating new actors.
+        * Send shutdown message to all created actors.
+        * Awaits until all actors are shutdown.
+        &#34;&#34;&#34;
+        # NOTE: We need to acquire the lock just to make sure there is no inprogress actor creation.
+        async with self._lock:
+            self.context.info(&#39;shutting down&#39;)
+            self._running = False
+
+        proxies = [self.get_proxy(self.context, actor_id) for actor_id in self._actors]
+
+        for proxy in proxies:
+            await proxy.tell(
+                context=self.context,
+                message=ShutdownMessage(),
+            )
+
+        await asyncio.gather(
+            *[proxy.wait_until_shutdown() for proxy in proxies],
+            return_exceptions=True,
+        )
+
+    def get_proxy(self, callee_context: Context, actor_id: str) -&gt; ActorProxy:
+        &#34;&#34;&#34;Get proxy of `actor_id` actor.
+
+        Args:
+            callee_context (Context): Context of the callee (`actor_id` will be concat to the callee derived identity).
+            actor_id (str): The actor id to get proxy of.
+
+        Raises:
+            RuntimeError: If `actor_id` cannot be found.
+
+        Returns:
+            ActorProxy: The proxy of `actor_id`.
+        &#34;&#34;&#34;
+        actor_id = self._generate_actor_id(callee_context.identity, actor_id)
+
+        if actor_id not in self._actors:
+            raise RuntimeError(f&#39;actor: `{actor_id}` doesnt exist&#39;)
+        return ActorProxy(
+            actor=self._actors[actor_id],
+            actor_id=actor_id,
+        )
+
+    @property
+    def actors(self) -&gt; typing.Dict[str, Actor]:
+        &#34;&#34;&#34;Created actors mapping (`actor_id` to `Actor`).
+
+        Returns:
+            typing.Dict[str, Actor]: created actors mapping.
+        &#34;&#34;&#34;
+        return self._actors
+
+
+_core = Core()
+
+
+def get_core() -&gt; Core:
+    &#34;&#34;&#34;System core getter.
+
+    Returns:
+        Core: The system core.
+    &#34;&#34;&#34;
+    return _core</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="libactors.core.get_core"><code class="name flex">
+<span>def <span class="ident">get_core</span></span>(<span>) ‑> <a title="libactors.core.Core" href="#libactors.core.Core">Core</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>System core getter.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.core.Core" href="#libactors.core.Core">Core</a></code></dt>
+<dd>The system core.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_core() -&gt; Core:
+    &#34;&#34;&#34;System core getter.
+
+    Returns:
+        Core: The system core.
+    &#34;&#34;&#34;
+    return _core</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="libactors.core.Core"><code class="flex name class">
+<span>class <span class="ident">Core</span></span>
+<span>(</span><span>context: Optional[<a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The libactors core, the core is resposible of:</p>
+<ul>
+<li>Actors creation.</li>
+<li>Actors lookup (returns <code>ActorProxy</code>).</li>
+<li>System shutdown (shuts down all created actors).</li>
+</ul>
+<p>In most of the cases there will be only one <code><a title="libactors.core.Core" href="#libactors.core.Core">Core</a></code> in the system (it can be easily retrieved using the <code><a title="libactors.core.get_core" href="#libactors.core.get_core">get_core()</a></code> function), but it is not enforced.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Core:
+    &#34;&#34;&#34;The libactors core, the core is resposible of:
+
+    * Actors creation.
+    * Actors lookup (returns `ActorProxy`).
+    * System shutdown (shuts down all created actors).
+
+    In most of the cases there will be only one `Core` in the system (it can be easily retrieved using the `get_core` function), but it is not enforced.
+    &#34;&#34;&#34;
+    def __init__(self, context: typing.Optional[Context] = None):
+        # NOTE: The context and the core are chicken-egg problem.
+        # On one side, the core uses context for logging and resolving actor proxies.
+        # On the other side, the core is accessible from the context so other actors will be able to ask their core stuff.
+        # Therefore, usually the core will be initialized without a context.
+        # After creating a context with that empty core it will be assigned to the core using the `set_context` function.
+        self._actors = dict()
+        self._lock = asyncio.Lock()
+        self._running = True
+        self._context = context
+
+    @property
+    def context(self) -&gt; Context:
+        return self._context
+
+    def set_context(self, context):
+        &#34;&#34;&#34;Context setter for core (replaces current internal context).
+
+        Args:
+            context (libactors.Context): New context to set.
+        &#34;&#34;&#34;
+        self._context = context
+
+    def is_actor_type_exists(self, actor_cls: typing.Type[Actor]) -&gt; bool:
+        &#34;&#34;&#34;Checks if actor of type `actor_cls` is already registered.
+
+        Args:
+            actor_cls (typing.Type[Actor]): Actor type to check if registered.
+
+        Returns:
+            bool: `True` iff `actor_cls` is registered.
+        &#34;&#34;&#34;
+        return actor_cls in ACTOR_REPOSITORY
+
+    def _generate_actor_id(self, base: str, actor_id: str):
+        # NOTE: it will not work on windows, since path separator is not &#39;/&#39;.
+        return str(pathlib.Path(base) / actor_id)
+
+    def _assert_running(self, msg: str = &#39;Core is not running&#39;):
+        if not self._running:
+            raise RuntimeError(msg)
+
+    async def create_actor(
+        self,
+        callee_context: Context,
+        actor_id: str,
+        actor_cls: typing.Type[Actor],
+        log_bindings: typing.Dict[str, typing.Any] = {},
+        *args,
+        **kwargs
+    ) -&gt; ActorProxy:
+        &#34;&#34;&#34;Creates an actor of type `actor_cls` with a given `actor_id` name.
+        args and kwargs are passed directly to the internal actor `__init__` function.
+
+        Args:
+            callee_context (Context): Callee context to derive new context for the newborn actor.
+            actor_id (str): Name of the newborn actor.
+            actor_cls (typing.Type[libactors.Actor]): Type of the newborn actor.
+            log_bindings (typing.Dict[str, typing.Any]): Log binding for derived context.
+
+        Raises:
+            RuntimeError: If `actor_id` already exists.
+
+        Returns:
+            ActorProxy: Actor proxy that wraps the newborn actor.
+        &#34;&#34;&#34;
+
+        self._assert_running()
+
+        actor_id = self._generate_actor_id(callee_context.identity, actor_id)
+
+        self.context.info(f&#39;creating actor: `{actor_cls}` with id: `{actor_id}`&#39;)
+        async with self._lock:
+            # Checking if core was shutdown.
+            self._assert_running(&#39;core is no longer running&#39;)
+
+            # Checking if `actor_id` already exists.
+            if actor_id in self._actors:
+                raise RuntimeError(f&#39;actor {actor_id} already exists&#39;)
+
+            # Creating actor and putting it in the internal actors mapping.
+            actor = actor_cls(  # type: ignore
+                # Derived context of the new created actor is expanded with new `log_bindings` and its new identity is set.
+                context     = callee_context(identity=actor_id, **log_bindings),
+                actor_id    = actor_id,
+                *args,
+                **kwargs
+            )
+            # The actor is saved in the private actors mapping.
+            self._actors[actor_id] = actor
+
+            # Starting actor (creates serve task internally)
+            actor.start()  # TODO: for completeness who is in charge of shutdown.
+
+            return ActorProxy(
+                actor=actor,
+                actor_id=actor_id,
+            )
+
+    async def remove_actor(self, actor_id: str):
+        &#34;&#34;&#34;Remove a shut-down actor
+
+        Args:
+            actor_id: ID of actor to remove
+
+        Raises:
+            RuntimeError if the core is not running
+            ValueError if the Actor is not shut down
+        &#34;&#34;&#34;
+        self._assert_running()
+
+        if actor_id not in self._actors:
+            self.context.warning(f&#39;remove_actor failed: no actor with id: {actor_id}&#39;)
+            return
+
+        actor = self._actors[actor_id]
+        if not actor.is_shutdown():
+            raise ValueError(&#39;Actor {actor_id} is not shut down&#39;)
+
+        del self._actors[actor_id]
+
+    async def shutdown(self):
+        &#34;&#34;&#34;Shuts down the core:
+
+        * Disable creating new actors.
+        * Send shutdown message to all created actors.
+        * Awaits until all actors are shutdown.
+        &#34;&#34;&#34;
+        # NOTE: We need to acquire the lock just to make sure there is no inprogress actor creation.
+        async with self._lock:
+            self.context.info(&#39;shutting down&#39;)
+            self._running = False
+
+        proxies = [self.get_proxy(self.context, actor_id) for actor_id in self._actors]
+
+        for proxy in proxies:
+            await proxy.tell(
+                context=self.context,
+                message=ShutdownMessage(),
+            )
+
+        await asyncio.gather(
+            *[proxy.wait_until_shutdown() for proxy in proxies],
+            return_exceptions=True,
+        )
+
+    def get_proxy(self, callee_context: Context, actor_id: str) -&gt; ActorProxy:
+        &#34;&#34;&#34;Get proxy of `actor_id` actor.
+
+        Args:
+            callee_context (Context): Context of the callee (`actor_id` will be concat to the callee derived identity).
+            actor_id (str): The actor id to get proxy of.
+
+        Raises:
+            RuntimeError: If `actor_id` cannot be found.
+
+        Returns:
+            ActorProxy: The proxy of `actor_id`.
+        &#34;&#34;&#34;
+        actor_id = self._generate_actor_id(callee_context.identity, actor_id)
+
+        if actor_id not in self._actors:
+            raise RuntimeError(f&#39;actor: `{actor_id}` doesnt exist&#39;)
+        return ActorProxy(
+            actor=self._actors[actor_id],
+            actor_id=actor_id,
+        )
+
+    @property
+    def actors(self) -&gt; typing.Dict[str, Actor]:
+        &#34;&#34;&#34;Created actors mapping (`actor_id` to `Actor`).
+
+        Returns:
+            typing.Dict[str, Actor]: created actors mapping.
+        &#34;&#34;&#34;
+        return self._actors</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="libactors.core.Core.actors"><code class="name">var <span class="ident">actors</span> : Dict[str, <a title="libactors.actor.actor.Actor" href="actor/actor.html#libactors.actor.actor.Actor">Actor</a>]</code></dt>
+<dd>
+<div class="desc"><p>Created actors mapping (<code>actor_id</code> to <code>Actor</code>).</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Dict[str, Actor]</code></dt>
+<dd>created actors mapping.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def actors(self) -&gt; typing.Dict[str, Actor]:
+    &#34;&#34;&#34;Created actors mapping (`actor_id` to `Actor`).
+
+    Returns:
+        typing.Dict[str, Actor]: created actors mapping.
+    &#34;&#34;&#34;
+    return self._actors</code></pre>
+</details>
+</dd>
+<dt id="libactors.core.Core.context"><code class="name">var <span class="ident">context</span> : <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def context(self) -&gt; Context:
+    return self._context</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="libactors.core.Core.create_actor"><code class="name flex">
+<span>async def <span class="ident">create_actor</span></span>(<span>self, callee_context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, actor_id: str, actor_cls: Type[<a title="libactors.actor.actor.Actor" href="actor/actor.html#libactors.actor.actor.Actor">Actor</a>], log_bindings: Dict[str, Any] = {}, *args, **kwargs) ‑> <a title="libactors.actor.proxy.ActorProxy" href="actor/proxy.html#libactors.actor.proxy.ActorProxy">ActorProxy</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates an actor of type <code>actor_cls</code> with a given <code>actor_id</code> name.
+args and kwargs are passed directly to the internal actor <code>__init__</code> function.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>callee_context</code></strong> :&ensp;<code>Context</code></dt>
+<dd>Callee context to derive new context for the newborn actor.</dd>
+<dt><strong><code>actor_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newborn actor.</dd>
+<dt><strong><code>actor_cls</code></strong> :&ensp;<code>typing.Type[<a title="libactors.Actor" href="index.html#libactors.Actor">Actor</a>]</code></dt>
+<dd>Type of the newborn actor.</dd>
+<dt><strong><code>log_bindings</code></strong> :&ensp;<code>typing.Dict[str, typing.Any]</code></dt>
+<dd>Log binding for derived context.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>RuntimeError</code></dt>
+<dd>If <code>actor_id</code> already exists.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ActorProxy</code></dt>
+<dd>Actor proxy that wraps the newborn actor.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_actor(
+    self,
+    callee_context: Context,
+    actor_id: str,
+    actor_cls: typing.Type[Actor],
+    log_bindings: typing.Dict[str, typing.Any] = {},
+    *args,
+    **kwargs
+) -&gt; ActorProxy:
+    &#34;&#34;&#34;Creates an actor of type `actor_cls` with a given `actor_id` name.
+    args and kwargs are passed directly to the internal actor `__init__` function.
+
+    Args:
+        callee_context (Context): Callee context to derive new context for the newborn actor.
+        actor_id (str): Name of the newborn actor.
+        actor_cls (typing.Type[libactors.Actor]): Type of the newborn actor.
+        log_bindings (typing.Dict[str, typing.Any]): Log binding for derived context.
+
+    Raises:
+        RuntimeError: If `actor_id` already exists.
+
+    Returns:
+        ActorProxy: Actor proxy that wraps the newborn actor.
+    &#34;&#34;&#34;
+
+    self._assert_running()
+
+    actor_id = self._generate_actor_id(callee_context.identity, actor_id)
+
+    self.context.info(f&#39;creating actor: `{actor_cls}` with id: `{actor_id}`&#39;)
+    async with self._lock:
+        # Checking if core was shutdown.
+        self._assert_running(&#39;core is no longer running&#39;)
+
+        # Checking if `actor_id` already exists.
+        if actor_id in self._actors:
+            raise RuntimeError(f&#39;actor {actor_id} already exists&#39;)
+
+        # Creating actor and putting it in the internal actors mapping.
+        actor = actor_cls(  # type: ignore
+            # Derived context of the new created actor is expanded with new `log_bindings` and its new identity is set.
+            context     = callee_context(identity=actor_id, **log_bindings),
+            actor_id    = actor_id,
+            *args,
+            **kwargs
+        )
+        # The actor is saved in the private actors mapping.
+        self._actors[actor_id] = actor
+
+        # Starting actor (creates serve task internally)
+        actor.start()  # TODO: for completeness who is in charge of shutdown.
+
+        return ActorProxy(
+            actor=actor,
+            actor_id=actor_id,
+        )</code></pre>
+</details>
+</dd>
+<dt id="libactors.core.Core.get_proxy"><code class="name flex">
+<span>def <span class="ident">get_proxy</span></span>(<span>self, callee_context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, actor_id: str) ‑> <a title="libactors.actor.proxy.ActorProxy" href="actor/proxy.html#libactors.actor.proxy.ActorProxy">ActorProxy</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get proxy of <code>actor_id</code> actor.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>callee_context</code></strong> :&ensp;<code>Context</code></dt>
+<dd>Context of the callee (<code>actor_id</code> will be concat to the callee derived identity).</dd>
+<dt><strong><code>actor_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The actor id to get proxy of.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>RuntimeError</code></dt>
+<dd>If <code>actor_id</code> cannot be found.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ActorProxy</code></dt>
+<dd>The proxy of <code>actor_id</code>.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_proxy(self, callee_context: Context, actor_id: str) -&gt; ActorProxy:
+    &#34;&#34;&#34;Get proxy of `actor_id` actor.
+
+    Args:
+        callee_context (Context): Context of the callee (`actor_id` will be concat to the callee derived identity).
+        actor_id (str): The actor id to get proxy of.
+
+    Raises:
+        RuntimeError: If `actor_id` cannot be found.
+
+    Returns:
+        ActorProxy: The proxy of `actor_id`.
+    &#34;&#34;&#34;
+    actor_id = self._generate_actor_id(callee_context.identity, actor_id)
+
+    if actor_id not in self._actors:
+        raise RuntimeError(f&#39;actor: `{actor_id}` doesnt exist&#39;)
+    return ActorProxy(
+        actor=self._actors[actor_id],
+        actor_id=actor_id,
+    )</code></pre>
+</details>
+</dd>
+<dt id="libactors.core.Core.is_actor_type_exists"><code class="name flex">
+<span>def <span class="ident">is_actor_type_exists</span></span>(<span>self, actor_cls: Type[<a title="libactors.actor.actor.Actor" href="actor/actor.html#libactors.actor.actor.Actor">Actor</a>]) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if actor of type <code>actor_cls</code> is already registered.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actor_cls</code></strong> :&ensp;<code>typing.Type[Actor]</code></dt>
+<dd>Actor type to check if registered.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd><code>True</code> iff <code>actor_cls</code> is registered.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_actor_type_exists(self, actor_cls: typing.Type[Actor]) -&gt; bool:
+    &#34;&#34;&#34;Checks if actor of type `actor_cls` is already registered.
+
+    Args:
+        actor_cls (typing.Type[Actor]): Actor type to check if registered.
+
+    Returns:
+        bool: `True` iff `actor_cls` is registered.
+    &#34;&#34;&#34;
+    return actor_cls in ACTOR_REPOSITORY</code></pre>
+</details>
+</dd>
+<dt id="libactors.core.Core.remove_actor"><code class="name flex">
+<span>async def <span class="ident">remove_actor</span></span>(<span>self, actor_id: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove a shut-down actor</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actor_id</code></strong></dt>
+<dd>ID of actor to remove</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<p>RuntimeError if the core is not running
+ValueError if the Actor is not shut down</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def remove_actor(self, actor_id: str):
+    &#34;&#34;&#34;Remove a shut-down actor
+
+    Args:
+        actor_id: ID of actor to remove
+
+    Raises:
+        RuntimeError if the core is not running
+        ValueError if the Actor is not shut down
+    &#34;&#34;&#34;
+    self._assert_running()
+
+    if actor_id not in self._actors:
+        self.context.warning(f&#39;remove_actor failed: no actor with id: {actor_id}&#39;)
+        return
+
+    actor = self._actors[actor_id]
+    if not actor.is_shutdown():
+        raise ValueError(&#39;Actor {actor_id} is not shut down&#39;)
+
+    del self._actors[actor_id]</code></pre>
+</details>
+</dd>
+<dt id="libactors.core.Core.set_context"><code class="name flex">
+<span>def <span class="ident">set_context</span></span>(<span>self, context)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Context setter for core (replaces current internal context).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code><a title="libactors.Context" href="index.html#libactors.Context">Context</a></code></dt>
+<dd>New context to set.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_context(self, context):
+    &#34;&#34;&#34;Context setter for core (replaces current internal context).
+
+    Args:
+        context (libactors.Context): New context to set.
+    &#34;&#34;&#34;
+    self._context = context</code></pre>
+</details>
+</dd>
+<dt id="libactors.core.Core.shutdown"><code class="name flex">
+<span>async def <span class="ident">shutdown</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shuts down the core:</p>
+<ul>
+<li>Disable creating new actors.</li>
+<li>Send shutdown message to all created actors.</li>
+<li>Awaits until all actors are shutdown.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def shutdown(self):
+    &#34;&#34;&#34;Shuts down the core:
+
+    * Disable creating new actors.
+    * Send shutdown message to all created actors.
+    * Awaits until all actors are shutdown.
+    &#34;&#34;&#34;
+    # NOTE: We need to acquire the lock just to make sure there is no inprogress actor creation.
+    async with self._lock:
+        self.context.info(&#39;shutting down&#39;)
+        self._running = False
+
+    proxies = [self.get_proxy(self.context, actor_id) for actor_id in self._actors]
+
+    for proxy in proxies:
+        await proxy.tell(
+            context=self.context,
+            message=ShutdownMessage(),
+        )
+
+    await asyncio.gather(
+        *[proxy.wait_until_shutdown() for proxy in proxies],
+        return_exceptions=True,
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="libactors" href="index.html">libactors</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="libactors.core.get_core" href="#libactors.core.get_core">get_core</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="libactors.core.Core" href="#libactors.core.Core">Core</a></code></h4>
+<ul class="">
+<li><code><a title="libactors.core.Core.actors" href="#libactors.core.Core.actors">actors</a></code></li>
+<li><code><a title="libactors.core.Core.context" href="#libactors.core.Core.context">context</a></code></li>
+<li><code><a title="libactors.core.Core.create_actor" href="#libactors.core.Core.create_actor">create_actor</a></code></li>
+<li><code><a title="libactors.core.Core.get_proxy" href="#libactors.core.Core.get_proxy">get_proxy</a></code></li>
+<li><code><a title="libactors.core.Core.is_actor_type_exists" href="#libactors.core.Core.is_actor_type_exists">is_actor_type_exists</a></code></li>
+<li><code><a title="libactors.core.Core.remove_actor" href="#libactors.core.Core.remove_actor">remove_actor</a></code></li>
+<li><code><a title="libactors.core.Core.set_context" href="#libactors.core.Core.set_context">set_context</a></code></li>
+<li><code><a title="libactors.core.Core.shutdown" href="#libactors.core.Core.shutdown">shutdown</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

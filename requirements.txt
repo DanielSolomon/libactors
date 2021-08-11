@@ -1,4 +1,8 @@
 Click==7.0
 mashumaro==1.12
 sentinels==1.0.0
+asyncclick==7.0.9
 structlog
+munch
+fastapi
+hypercorn

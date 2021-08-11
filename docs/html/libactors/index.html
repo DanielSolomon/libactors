@@ -1,0 +1,2880 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>libactors API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Package <code>libactors</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from . import actor
+from .actor import Actor, ActorProxy
+from .context import Context
+from .core import Core, get_core
+
+from . import message, log, aio
+from .message import Message, Envelope
+
+bind = Context.bind_function
+
+__all__ = [
+    &#39;bind&#39;,
+    &#39;Core&#39;,
+    &#39;get_core&#39;,
+    &#39;actor&#39;,
+    &#39;Actor&#39;,
+    &#39;ActorProxy&#39;,
+    &#39;Context&#39;,
+    &#39;message&#39;,
+    &#39;Message&#39;,
+    &#39;Envelope&#39;,
+    &#39;log&#39;,
+    &#39;aio&#39;,
+]</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="libactors.actor" href="actor/index.html">libactors.actor</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="libactors.aio" href="aio/index.html">libactors.aio</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="libactors.app" href="app/index.html">libactors.app</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="libactors.context" href="context.html">libactors.context</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="libactors.core" href="core.html">libactors.core</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="libactors.log" href="log/index.html">libactors.log</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="libactors.message" href="message.html">libactors.message</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="libactors.testing" href="testing/index.html">libactors.testing</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="libactors.bind"><code class="name flex">
+<span>def <span class="ident">bind</span></span>(<span>**bindings)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Decorator to use for temporary log bindings as long as the decorated function runs.
+The decorated function must have a context argument in its signature.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; @Context.bind_function(foo='bar')
+... async def function(self, context):
+...     context.info('log')  # {'foo': 'bar', 'event': 'log'}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def bind_function(**bindings):
+    &#34;&#34;&#34;Decorator to use for temporary log bindings as long as the decorated function runs.
+    The decorated function must have a context argument in its signature.
+
+    &gt;&gt;&gt; @Context.bind_function(foo=&#39;bar&#39;)
+    ... async def function(self, context):
+    ...     context.info(&#39;log&#39;)  # {&#39;foo&#39;: &#39;bar&#39;, &#39;event&#39;: &#39;log&#39;}
+    &#34;&#34;&#34;
+    def _bound(func):
+        def _get_context(func, *args, **kwargs):
+            &#34;&#34;&#34;Finds the value of the context argument in a function call.
+
+            Raises:
+                RuntimeError: If `context` argument was not passed.
+            &#34;&#34;&#34;
+            signature = inspect.signature(func)
+            context = kwargs.get(&#39;context&#39;)
+            if context is None:
+                try:
+                    context = args[list(signature.parameters.keys()).index(&#39;context&#39;)]
+                except Exception:
+                    raise RuntimeError(&#39;cannot bind contextless function&#39;)
+            return context
+
+        # The following two wrappers binds before calling the function (separated for coroutine and regular functions).
+        @functools.wraps(func)
+        async def awrapper(*args, **kwargs):
+            with _get_context(func, *args, **kwargs).bind(**bindings):
+                return await func(*args, **kwargs)
+
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            with _get_context(func, *args, **kwargs).bind(**bindings):
+                return func(*args, **kwargs)
+
+        return awrapper if asyncio.iscoroutinefunction(func) else wrapper
+
+    return _bound</code></pre>
+</details>
+</dd>
+<dt id="libactors.get_core"><code class="name flex">
+<span>def <span class="ident">get_core</span></span>(<span>) ‑> <a title="libactors.core.Core" href="core.html#libactors.core.Core">Core</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>System core getter.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.Core" href="#libactors.Core">Core</a></code></dt>
+<dd>The system core.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_core() -&gt; Core:
+    &#34;&#34;&#34;System core getter.
+
+    Returns:
+        Core: The system core.
+    &#34;&#34;&#34;
+    return _core</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="libactors.Actor"><code class="flex name class">
+<span>class <span class="ident">Actor</span></span>
+<span>(</span><span>context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, actor_id: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The Actor.
+Worker that handles messages one at a time.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Actor(aio.service.Service, metaclass=ActorMetaclass):
+    &#34;&#34;&#34;The Actor.
+    Worker that handles messages one at a time.
+    &#34;&#34;&#34;
+    def __init_subclass__(cls, **kwargs):
+        &#34;&#34;&#34;Registering `cls` in the actors repository.
+        &#34;&#34;&#34;
+        # Avoiding circular logs by lazy import.
+        from ..core import ACTOR_REPOSITORY
+        super().__init_subclass__(**kwargs)
+        ACTOR_REPOSITORY.add(cls)
+
+    def __init__(self, context: Context, actor_id: str):
+        super().__init__()
+        self._actor_id = actor_id
+        self._context = context
+
+        # Queue for handling incoming messages.
+        self._queue = asyncio.Queue()
+
+        # Event to signal that the actor is initialized
+        self._initialize_event = asyncio.Event()
+        self._initialize_exception = None
+
+        # Event to signal that the actor has shutdown.
+        self._shutdown_event = asyncio.Event()
+
+        # Actor sub-actlets
+        self._actlets = {}
+
+    def __repr__(self):
+        return f&#39;{self.__class__.__name__}(context={self.context.__class__.__name__}, actor_id={self.actor_id})&#39;
+
+    @property
+    def actor_id(self):
+        return self._actor_id
+
+    @property
+    def context(self):
+        return self._context
+
+    async def initialize(self, context):
+        &#34;&#34;&#34;async __init__ function, should overriden by derived classes.
+        &#34;&#34;&#34;
+        pass
+
+    def post(self, envelope: Envelope) -&gt; EnvelopeTracker:
+        &#34;&#34;&#34;Posts an envelope to this actor message queue.
+
+        Args:
+            envelope (libactors.Envelope): Envelope to post.
+
+        Returns:
+            EnvelopeTracker: Envelope tracker to track message progress and obtain the result.
+        &#34;&#34;&#34;
+        # NOTE: envelope is deep copied since it might include references to internal state structures of actors.
+        # After copying the message, the receiver actor may either access or modify any property safely.
+        envelope = copy.deepcopy(envelope)
+        tracker = EnvelopeTracker(envelope)
+        self._queue.put_nowait((envelope, tracker))
+        return tracker
+
+    def tell_me(self, message: Message) -&gt; EnvelopeTracker:
+        &#34;&#34;&#34;Posts message to self.
+
+        Args:
+            message (libactors.Message): Message to post.
+
+        Returns:
+            EnvelopeTracker: Envelope tracker to track message progress and obtain the result.
+        &#34;&#34;&#34;
+        envelope = Envelope(
+            id=str(uuid.uuid4()),
+            sender=self.context.identity,
+            receiver=self.context.identity,
+            message=message,
+        )
+        return self.post(envelope)
+
+    async def stop(self, context):
+        context.info(f&#39;stopping {self}&#39;)
+        super().stop()
+
+    @register_handler(ShutdownMessage)
+    async def handle_shutdown(self, context, message):
+        &#34;&#34;&#34;Shutdown actor by stopping the service and canceling all active actlets.
+        &#34;&#34;&#34;
+        await asyncio.gather(
+            *[actlet.cancel() for actlet in self._actlets.values()],
+            return_exceptions=True,
+        )
+        await self.stop(context)
+
+    @register_handler(ActletDoneMessage)
+    async def handle_actlet_done(self, context, message: ActletDoneMessage):
+        context.debug(f&#39;Actlet {context.sender} is done&#39;)
+        if isinstance(message.result, Message):
+            self.tell_me(message.result)
+        del self._actlets[context.sender]
+
+    @register_handler(TimerDoneMessage)
+    async def handle_timer_done(self, context, message):
+        &#34;&#34;&#34;TimerDoneMessage handler, should be overridden by derived classes if relevant.
+        &#34;&#34;&#34;
+        context.debug(f&#39;Timer {context.sender} is done&#39;)
+
+    async def wait_until_initialized(self) -&gt; None:
+        &#34;&#34;&#34;Awaits until the actor is initialized.
+        If actor initialization has failed (raises), the exception will be raised in the callee context.
+        &#34;&#34;&#34;
+        await self._initialize_event.wait()
+        if self._initialize_exception is not None:
+            raise self._initialize_exception
+
+    async def wait_until_shutdown(self) -&gt; None:
+        &#34;&#34;&#34;Awaits until the actor has shutdown.
+        &#34;&#34;&#34;
+        await self._shutdown_event.wait()
+
+    def is_shutdown(self):
+        return self._shutdown_event.is_set()
+
+    async def serve(self):
+        &#34;&#34;&#34;Actor&#39;s infinite serving loop.
+
+        * Initialize actor:
+            o set as initialized.
+        * Fetch messages from queue:
+            o handle message if handler exists.
+        &#34;&#34;&#34;
+        assert self.context is not None
+        try:
+            try:
+                # Initialize actor.
+                await self.initialize(self.context)
+                # Finished initialization, setting event so all listeners would get notified.
+                self._initialize_event.set()
+            except Exception as e:
+                self.context.exception(f&#39;caught exception while initialized {self.actor_id}&#39;)
+                # Finished initialization, setting event so all listeners would get notified.
+                self._initialize_event.set()
+                # Putting exception so anyone who gets notified will get it.
+                self._initialize_exception = e
+                raise
+
+            waiter: aio.multiwaiter.MultiWaiter
+            async with aio.multiwaiter.in_multi_waiter() as waiter:
+                # Service stop event.
+                waiter.add(self, lambda obj: obj.wait_stop())
+                # Envelope event.
+                waiter.add(self._queue, lambda obj: obj.get())
+
+                while True:
+                    self.context.debug(&#39;waiting for work&#39;)
+                    await waiter.wait_first()
+
+                    # Service is done
+                    if waiter.done(self):
+                        self.context.info(&#39;service was stopped&#39;)
+                        break
+
+                    # If we got here, we have an event in our queue.
+                    envelope, tracker = waiter.result(self._queue)
+                    self.context.debug(f&#39;received envelope: {type(envelope.message)}&#39;)
+                    # Fetching handler of message `envelope.message`.
+                    handler = self._router.match(envelope.message)
+                    if handler is None:
+                        # If no handler we just mark the envelope tracker as unhandled.
+                        self.context.warning(f&#39;no handler for message: {type(envelope.message)}&#39;)
+                        tracker._fut.set_result(UNHANDLED)
+                        self._queue.task_done()
+                        continue
+
+                    try:
+                        # Trying to handle the message.
+                        self.context.debug(
+                            f&#39;handling envelope using handler {handler.__qualname__}&#39;
+                        )
+                        result = await handler(
+                            self, self.context(envelope=envelope), envelope.message
+                        )
+                        tracker._fut.set_result(result)
+                    except Exception as e:
+                        self.context.exception(
+                            f&#39;got an exception while handling envelope: {envelope}. exc: {e}&#39;
+                        )
+                        tracker._fut.set_exception(e)
+                    self._queue.task_done()
+        finally:
+            # cleanup
+            self._shutdown_event.set()
+            await self.context.core.remove_actor(self._actor_id)
+
+    # NOTE: This async for future-proofing.
+    async def create_actlet(
+        self, context: Context, name: str, function: typing.Callable, configuration: Message
+    ):
+        &#34;&#34;&#34;creates sub-actlet which runs the function in parallel to this actor&#39;s work.
+        when done, the result is posted as a message to the actor
+
+        Args:
+            context (Context): Context object.
+            name (str): Actlet&#39;s name.
+            function (typing.Callable): Actlet&#39;s entrypoint function.
+            configuration (Message): Actlet&#39;s configuration.
+
+        Raises:
+            RuntimeError: If there is an actlet named `name` already.
+
+        Returns:
+            libactors.actor.actlet: The created actlet object.
+        &#34;&#34;&#34;
+        # Avoiding circular logs by lazy import.
+        from .actlet import Actlet
+
+        if self.is_actlet_exists(name):
+            raise RuntimeError(f&#39;actlet: {name} already exists&#39;)
+        if hasattr(function, &#39;__self__&#39;):
+            raise RuntimeError(f&#39;actlet function: {function} must not be bound&#39;)
+
+        name = self._generate_actlet_name(name)
+
+        actlet = Actlet(
+            name=name,
+            context=context(identity=name),
+            entry_point=function,
+            # Actlet is created with proxy to the created actor.
+            proxy=context.get_proxy(self.actor_id),
+            # NOTE: configuration is deep copied since it might include references to internal state structures of actors.
+            # After copying the configuration, the receiver actor may either access or modify any property safely.
+            configuration=copy.deepcopy(configuration),
+        )
+        # Add the actlet to the mapping so the actor can keep track of all its actlets.
+        self._actlets[name] = actlet
+        return actlet
+
+    async def cancel_actlet(self, context: Context, name: str):
+        &#34;&#34;&#34;Cancels the actlet named `name`.
+
+        Args:
+            context (Context): Context object.
+            name (str): Actlet&#39;s name.
+        &#34;&#34;&#34;
+        actlet_name = self._generate_actlet_name(name)
+        await self._actlets[actlet_name].cancel()
+        del self._actlets[actlet_name]
+
+    @staticmethod
+    async def _generic_timer(
+        context: Context, proxy, configuration: TimerConfiguration
+    ) -&gt; TimerDoneMessage:
+        &#34;&#34;&#34;Generic timer function that sends a `configuration.message` every `configuration.interval` seconds.
+
+        Args:
+            context (libactors.Context): Context object.
+            proxy (libactors.ActorProxy): Proxy to whom send `configuration.message`
+            configuration (TimerConfiguration): Timer&#39;s configuration.
+
+        Returns:
+            TimerDoneMessage: Upon exception/completed all requested repetitions.
+        &#34;&#34;&#34;
+        try:
+            # If timer is delayed we wait now.
+            if configuration.delay:
+                await asyncio.sleep(configuration.delay)
+
+            repetitions = configuration.repetitions if configuration.repetitions else float(&#39;inf&#39;)
+
+            # If timer was configured with `now`, send message before counting down.
+            if configuration.now:
+                await proxy.tell(
+                    context=context,
+                    message=configuration.message,
+                )
+                # Altough it looks weird the repetitions is not on the waiting cycles, but on the amount of messages to send.
+                repetitions -= 1
+
+            while repetitions &gt; 0:
+                context.debug(f&#39;sleeping {configuration.interval} seconds&#39;)
+                # NOTE(gil): it is okay to use asyncio.sleep instead of asyncio.call_later or such (asyncio.sleep calls asyncio.call_later)
+                await asyncio.sleep(configuration.interval)
+                await proxy.tell(
+                    context=context,
+                    message=configuration.message,
+                )
+                repetitions -= 1
+        except asyncio.CancelledError:
+            raise
+        except Exception as e:
+            context.exception(f&#39;exception in timer: {e}&#39;)
+        return TimerDoneMessage()
+
+    def _generate_actlet_name(self, name: str):
+        return f&#39;{self.context.identity}/actlet/{name}&#39;
+
+    def _generate_timer_name(self, name: str):
+        return f&#39;timer/{name}&#39;
+
+    async def create_timer(
+        self,
+        context: Context,
+        name: str,
+        message: Message,
+        interval: float,
+        delay: float = 0,
+        now: bool = False,
+        repetitions: int = 0
+    ):
+        &#34;&#34;&#34;Creates a timer with name `name` (look for `libactors.actor.messages.TimerConfiguration` for full argument description).
+
+        Args:
+            context (Context): Context object.
+            name (str): Timer&#39;s name.
+            message (Message): Message to send.
+            interval (float): Timer&#39;s interval.
+            delay (float, optional): Timer&#39;s delay. Defaults to 0.
+            now (bool, optional): Timer&#39;s now. Defaults to False.
+            repetitions (int, optional): Timer&#39;s repetitions. Defaults to 0.
+        &#34;&#34;&#34;
+        return await self.create_actlet(
+            context=context,
+            name=self._generate_timer_name(name),
+            function=Actor._generic_timer,
+            configuration=TimerConfiguration(
+                message=message,
+                interval=interval,
+                delay=delay,
+                now=now,
+                repetitions=repetitions,
+            ),
+        )
+
+    async def cancel_timer(self, context: Context, name: str):
+        &#34;&#34;&#34;Cancels the timer named `name`.
+
+        Args:
+            context (Context): Context object.
+            name (str): Timer&#39;s name.
+        &#34;&#34;&#34;
+        return await self.cancel_actlet(
+            context=context,
+            name=self._generate_timer_name(name),
+        )
+
+    def is_timer_exists(self, name: str) -&gt; bool:
+        &#34;&#34;&#34;Checks if timer named `name` exists.
+
+        Args:
+            name (str): The timer name.
+
+        Returns:
+            bool: True iff timer named `name` exists.
+        &#34;&#34;&#34;
+        return self.is_actlet_exists(self._generate_timer_name(name))
+
+    def is_actlet_exists(self, name: str) -&gt; bool:
+        &#34;&#34;&#34;Checks if actlet named `name` exists.
+
+        Args:
+            name (str): The actlet name.
+
+        Returns:
+            bool: True iff actlet named `name` exists.
+        &#34;&#34;&#34;
+        return self._generate_actlet_name(name) in self._actlets</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="libactors.aio.service.service.Service" href="aio/service/service.html#libactors.aio.service.service.Service">Service</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="libactors.app.actors.hello_world_actor.actor.HelloWorldActor" href="app/actors/hello_world_actor/actor.html#libactors.app.actors.hello_world_actor.actor.HelloWorldActor">HelloWorldActor</a></li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="libactors.Actor.actor_id"><code class="name">var <span class="ident">actor_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def actor_id(self):
+    return self._actor_id</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.context"><code class="name">var <span class="ident">context</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def context(self):
+    return self._context</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="libactors.Actor.cancel_actlet"><code class="name flex">
+<span>async def <span class="ident">cancel_actlet</span></span>(<span>self, context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, name: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cancels the actlet named <code>name</code>.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code><a title="libactors.Context" href="#libactors.Context">Context</a></code></dt>
+<dd>Context object.</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Actlet's name.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def cancel_actlet(self, context: Context, name: str):
+    &#34;&#34;&#34;Cancels the actlet named `name`.
+
+    Args:
+        context (Context): Context object.
+        name (str): Actlet&#39;s name.
+    &#34;&#34;&#34;
+    actlet_name = self._generate_actlet_name(name)
+    await self._actlets[actlet_name].cancel()
+    del self._actlets[actlet_name]</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.cancel_timer"><code class="name flex">
+<span>async def <span class="ident">cancel_timer</span></span>(<span>self, context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, name: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cancels the timer named <code>name</code>.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code><a title="libactors.Context" href="#libactors.Context">Context</a></code></dt>
+<dd>Context object.</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Timer's name.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def cancel_timer(self, context: Context, name: str):
+    &#34;&#34;&#34;Cancels the timer named `name`.
+
+    Args:
+        context (Context): Context object.
+        name (str): Timer&#39;s name.
+    &#34;&#34;&#34;
+    return await self.cancel_actlet(
+        context=context,
+        name=self._generate_timer_name(name),
+    )</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.create_actlet"><code class="name flex">
+<span>async def <span class="ident">create_actlet</span></span>(<span>self, context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, name: str, function: Callable, configuration: <a title="libactors.message.Message" href="message.html#libactors.message.Message">Message</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>creates sub-actlet which runs the function in parallel to this actor's work.
+when done, the result is posted as a message to the actor</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code><a title="libactors.Context" href="#libactors.Context">Context</a></code></dt>
+<dd>Context object.</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Actlet's name.</dd>
+<dt><strong><code>function</code></strong> :&ensp;<code>typing.Callable</code></dt>
+<dd>Actlet's entrypoint function.</dd>
+<dt><strong><code>configuration</code></strong> :&ensp;<code><a title="libactors.Message" href="#libactors.Message">Message</a></code></dt>
+<dd>Actlet's configuration.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>RuntimeError</code></dt>
+<dd>If there is an actlet named <code>name</code> already.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.actor.actlet" href="actor/actlet.html">libactors.actor.actlet</a></code></dt>
+<dd>The created actlet object.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_actlet(
+    self, context: Context, name: str, function: typing.Callable, configuration: Message
+):
+    &#34;&#34;&#34;creates sub-actlet which runs the function in parallel to this actor&#39;s work.
+    when done, the result is posted as a message to the actor
+
+    Args:
+        context (Context): Context object.
+        name (str): Actlet&#39;s name.
+        function (typing.Callable): Actlet&#39;s entrypoint function.
+        configuration (Message): Actlet&#39;s configuration.
+
+    Raises:
+        RuntimeError: If there is an actlet named `name` already.
+
+    Returns:
+        libactors.actor.actlet: The created actlet object.
+    &#34;&#34;&#34;
+    # Avoiding circular logs by lazy import.
+    from .actlet import Actlet
+
+    if self.is_actlet_exists(name):
+        raise RuntimeError(f&#39;actlet: {name} already exists&#39;)
+    if hasattr(function, &#39;__self__&#39;):
+        raise RuntimeError(f&#39;actlet function: {function} must not be bound&#39;)
+
+    name = self._generate_actlet_name(name)
+
+    actlet = Actlet(
+        name=name,
+        context=context(identity=name),
+        entry_point=function,
+        # Actlet is created with proxy to the created actor.
+        proxy=context.get_proxy(self.actor_id),
+        # NOTE: configuration is deep copied since it might include references to internal state structures of actors.
+        # After copying the configuration, the receiver actor may either access or modify any property safely.
+        configuration=copy.deepcopy(configuration),
+    )
+    # Add the actlet to the mapping so the actor can keep track of all its actlets.
+    self._actlets[name] = actlet
+    return actlet</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.create_timer"><code class="name flex">
+<span>async def <span class="ident">create_timer</span></span>(<span>self, context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, name: str, message: <a title="libactors.message.Message" href="message.html#libactors.message.Message">Message</a>, interval: float, delay: float = 0, now: bool = False, repetitions: int = 0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a timer with name <code>name</code> (look for <code><a title="libactors.actor.messages.TimerConfiguration" href="actor/messages.html#libactors.actor.messages.TimerConfiguration">TimerConfiguration</a></code> for full argument description).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code><a title="libactors.Context" href="#libactors.Context">Context</a></code></dt>
+<dd>Context object.</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Timer's name.</dd>
+<dt><strong><code>message</code></strong> :&ensp;<code><a title="libactors.Message" href="#libactors.Message">Message</a></code></dt>
+<dd>Message to send.</dd>
+<dt><strong><code>interval</code></strong> :&ensp;<code>float</code></dt>
+<dd>Timer's interval.</dd>
+<dt><strong><code>delay</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Timer's delay. Defaults to 0.</dd>
+<dt><strong><code>now</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Timer's now. Defaults to False.</dd>
+<dt><strong><code>repetitions</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Timer's repetitions. Defaults to 0.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_timer(
+    self,
+    context: Context,
+    name: str,
+    message: Message,
+    interval: float,
+    delay: float = 0,
+    now: bool = False,
+    repetitions: int = 0
+):
+    &#34;&#34;&#34;Creates a timer with name `name` (look for `libactors.actor.messages.TimerConfiguration` for full argument description).
+
+    Args:
+        context (Context): Context object.
+        name (str): Timer&#39;s name.
+        message (Message): Message to send.
+        interval (float): Timer&#39;s interval.
+        delay (float, optional): Timer&#39;s delay. Defaults to 0.
+        now (bool, optional): Timer&#39;s now. Defaults to False.
+        repetitions (int, optional): Timer&#39;s repetitions. Defaults to 0.
+    &#34;&#34;&#34;
+    return await self.create_actlet(
+        context=context,
+        name=self._generate_timer_name(name),
+        function=Actor._generic_timer,
+        configuration=TimerConfiguration(
+            message=message,
+            interval=interval,
+            delay=delay,
+            now=now,
+            repetitions=repetitions,
+        ),
+    )</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.handle_actlet_done"><code class="name flex">
+<span>async def <span class="ident">handle_actlet_done</span></span>(<span>self, context, message: <a title="libactors.actor.messages.ActletDoneMessage" href="actor/messages.html#libactors.actor.messages.ActletDoneMessage">ActletDoneMessage</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@register_handler(ActletDoneMessage)
+async def handle_actlet_done(self, context, message: ActletDoneMessage):
+    context.debug(f&#39;Actlet {context.sender} is done&#39;)
+    if isinstance(message.result, Message):
+        self.tell_me(message.result)
+    del self._actlets[context.sender]</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.handle_shutdown"><code class="name flex">
+<span>async def <span class="ident">handle_shutdown</span></span>(<span>self, context, message)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shutdown actor by stopping the service and canceling all active actlets.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@register_handler(ShutdownMessage)
+async def handle_shutdown(self, context, message):
+    &#34;&#34;&#34;Shutdown actor by stopping the service and canceling all active actlets.
+    &#34;&#34;&#34;
+    await asyncio.gather(
+        *[actlet.cancel() for actlet in self._actlets.values()],
+        return_exceptions=True,
+    )
+    await self.stop(context)</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.handle_timer_done"><code class="name flex">
+<span>async def <span class="ident">handle_timer_done</span></span>(<span>self, context, message)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>TimerDoneMessage handler, should be overridden by derived classes if relevant.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@register_handler(TimerDoneMessage)
+async def handle_timer_done(self, context, message):
+    &#34;&#34;&#34;TimerDoneMessage handler, should be overridden by derived classes if relevant.
+    &#34;&#34;&#34;
+    context.debug(f&#39;Timer {context.sender} is done&#39;)</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.initialize"><code class="name flex">
+<span>async def <span class="ident">initialize</span></span>(<span>self, context)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>async <strong>init</strong> function, should overriden by derived classes.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def initialize(self, context):
+    &#34;&#34;&#34;async __init__ function, should overriden by derived classes.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.is_actlet_exists"><code class="name flex">
+<span>def <span class="ident">is_actlet_exists</span></span>(<span>self, name: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if actlet named <code>name</code> exists.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The actlet name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>True iff actlet named <code>name</code> exists.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_actlet_exists(self, name: str) -&gt; bool:
+    &#34;&#34;&#34;Checks if actlet named `name` exists.
+
+    Args:
+        name (str): The actlet name.
+
+    Returns:
+        bool: True iff actlet named `name` exists.
+    &#34;&#34;&#34;
+    return self._generate_actlet_name(name) in self._actlets</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.is_shutdown"><code class="name flex">
+<span>def <span class="ident">is_shutdown</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_shutdown(self):
+    return self._shutdown_event.is_set()</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.is_timer_exists"><code class="name flex">
+<span>def <span class="ident">is_timer_exists</span></span>(<span>self, name: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if timer named <code>name</code> exists.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The timer name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>True iff timer named <code>name</code> exists.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_timer_exists(self, name: str) -&gt; bool:
+    &#34;&#34;&#34;Checks if timer named `name` exists.
+
+    Args:
+        name (str): The timer name.
+
+    Returns:
+        bool: True iff timer named `name` exists.
+    &#34;&#34;&#34;
+    return self.is_actlet_exists(self._generate_timer_name(name))</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.post"><code class="name flex">
+<span>def <span class="ident">post</span></span>(<span>self, envelope: <a title="libactors.message.Envelope" href="message.html#libactors.message.Envelope">Envelope</a>) ‑> <a title="libactors.actor.actor.EnvelopeTracker" href="actor/actor.html#libactors.actor.actor.EnvelopeTracker">EnvelopeTracker</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Posts an envelope to this actor message queue.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>envelope</code></strong> :&ensp;<code><a title="libactors.Envelope" href="#libactors.Envelope">Envelope</a></code></dt>
+<dd>Envelope to post.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>EnvelopeTracker</code></dt>
+<dd>Envelope tracker to track message progress and obtain the result.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def post(self, envelope: Envelope) -&gt; EnvelopeTracker:
+    &#34;&#34;&#34;Posts an envelope to this actor message queue.
+
+    Args:
+        envelope (libactors.Envelope): Envelope to post.
+
+    Returns:
+        EnvelopeTracker: Envelope tracker to track message progress and obtain the result.
+    &#34;&#34;&#34;
+    # NOTE: envelope is deep copied since it might include references to internal state structures of actors.
+    # After copying the message, the receiver actor may either access or modify any property safely.
+    envelope = copy.deepcopy(envelope)
+    tracker = EnvelopeTracker(envelope)
+    self._queue.put_nowait((envelope, tracker))
+    return tracker</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.serve"><code class="name flex">
+<span>async def <span class="ident">serve</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Actor's infinite serving loop.</p>
+<ul>
+<li>Initialize actor:
+o set as initialized.</li>
+<li>Fetch messages from queue:
+o handle message if handler exists.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def serve(self):
+    &#34;&#34;&#34;Actor&#39;s infinite serving loop.
+
+    * Initialize actor:
+        o set as initialized.
+    * Fetch messages from queue:
+        o handle message if handler exists.
+    &#34;&#34;&#34;
+    assert self.context is not None
+    try:
+        try:
+            # Initialize actor.
+            await self.initialize(self.context)
+            # Finished initialization, setting event so all listeners would get notified.
+            self._initialize_event.set()
+        except Exception as e:
+            self.context.exception(f&#39;caught exception while initialized {self.actor_id}&#39;)
+            # Finished initialization, setting event so all listeners would get notified.
+            self._initialize_event.set()
+            # Putting exception so anyone who gets notified will get it.
+            self._initialize_exception = e
+            raise
+
+        waiter: aio.multiwaiter.MultiWaiter
+        async with aio.multiwaiter.in_multi_waiter() as waiter:
+            # Service stop event.
+            waiter.add(self, lambda obj: obj.wait_stop())
+            # Envelope event.
+            waiter.add(self._queue, lambda obj: obj.get())
+
+            while True:
+                self.context.debug(&#39;waiting for work&#39;)
+                await waiter.wait_first()
+
+                # Service is done
+                if waiter.done(self):
+                    self.context.info(&#39;service was stopped&#39;)
+                    break
+
+                # If we got here, we have an event in our queue.
+                envelope, tracker = waiter.result(self._queue)
+                self.context.debug(f&#39;received envelope: {type(envelope.message)}&#39;)
+                # Fetching handler of message `envelope.message`.
+                handler = self._router.match(envelope.message)
+                if handler is None:
+                    # If no handler we just mark the envelope tracker as unhandled.
+                    self.context.warning(f&#39;no handler for message: {type(envelope.message)}&#39;)
+                    tracker._fut.set_result(UNHANDLED)
+                    self._queue.task_done()
+                    continue
+
+                try:
+                    # Trying to handle the message.
+                    self.context.debug(
+                        f&#39;handling envelope using handler {handler.__qualname__}&#39;
+                    )
+                    result = await handler(
+                        self, self.context(envelope=envelope), envelope.message
+                    )
+                    tracker._fut.set_result(result)
+                except Exception as e:
+                    self.context.exception(
+                        f&#39;got an exception while handling envelope: {envelope}. exc: {e}&#39;
+                    )
+                    tracker._fut.set_exception(e)
+                self._queue.task_done()
+    finally:
+        # cleanup
+        self._shutdown_event.set()
+        await self.context.core.remove_actor(self._actor_id)</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.stop"><code class="name flex">
+<span>async def <span class="ident">stop</span></span>(<span>self, context)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def stop(self, context):
+    context.info(f&#39;stopping {self}&#39;)
+    super().stop()</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.tell_me"><code class="name flex">
+<span>def <span class="ident">tell_me</span></span>(<span>self, message: <a title="libactors.message.Message" href="message.html#libactors.message.Message">Message</a>) ‑> <a title="libactors.actor.actor.EnvelopeTracker" href="actor/actor.html#libactors.actor.actor.EnvelopeTracker">EnvelopeTracker</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Posts message to self.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>message</code></strong> :&ensp;<code><a title="libactors.Message" href="#libactors.Message">Message</a></code></dt>
+<dd>Message to post.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>EnvelopeTracker</code></dt>
+<dd>Envelope tracker to track message progress and obtain the result.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tell_me(self, message: Message) -&gt; EnvelopeTracker:
+    &#34;&#34;&#34;Posts message to self.
+
+    Args:
+        message (libactors.Message): Message to post.
+
+    Returns:
+        EnvelopeTracker: Envelope tracker to track message progress and obtain the result.
+    &#34;&#34;&#34;
+    envelope = Envelope(
+        id=str(uuid.uuid4()),
+        sender=self.context.identity,
+        receiver=self.context.identity,
+        message=message,
+    )
+    return self.post(envelope)</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.wait_until_initialized"><code class="name flex">
+<span>async def <span class="ident">wait_until_initialized</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Awaits until the actor is initialized.
+If actor initialization has failed (raises), the exception will be raised in the callee context.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def wait_until_initialized(self) -&gt; None:
+    &#34;&#34;&#34;Awaits until the actor is initialized.
+    If actor initialization has failed (raises), the exception will be raised in the callee context.
+    &#34;&#34;&#34;
+    await self._initialize_event.wait()
+    if self._initialize_exception is not None:
+        raise self._initialize_exception</code></pre>
+</details>
+</dd>
+<dt id="libactors.Actor.wait_until_shutdown"><code class="name flex">
+<span>async def <span class="ident">wait_until_shutdown</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Awaits until the actor has shutdown.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def wait_until_shutdown(self) -&gt; None:
+    &#34;&#34;&#34;Awaits until the actor has shutdown.
+    &#34;&#34;&#34;
+    await self._shutdown_event.wait()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="libactors.ActorProxy"><code class="flex name class">
+<span>class <span class="ident">ActorProxy</span></span>
+<span>(</span><span>actor: <a title="libactors.actor.actor.Actor" href="actor/actor.html#libactors.actor.actor.Actor">Actor</a>, actor_id: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Proxy object that is the interface for communicating with an underlying actor object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ActorProxy:
+    &#34;&#34;&#34;Proxy object that is the interface for communicating with an underlying actor object.
+    &#34;&#34;&#34;
+    def __init__(self, actor: Actor, actor_id: str):
+        self._actor = actor
+        self._actor_id = actor_id
+        self._cache: typing.Dict[str, typing.Any] = {}
+
+    def __repr__(self):
+        return f&#39;&#39;&#39;{self.__class__.__name__}(
+    actor_id    = {self._actor_id!r},
+    actor       = {self._actor},
+)&#39;&#39;&#39;
+
+    @property
+    def actor_id(self):
+        return self._actor_id
+
+    @property
+    def actor_type(self):
+        return type(self._actor)
+
+    async def wait_until_initialized(self) -&gt; None:
+        &#34;&#34;&#34;Awaits until the actor is initialized.
+        If actor initialization has failed (raises), the exception will be raised in the callee context.
+        &#34;&#34;&#34;
+        await self._actor.wait_until_initialized()
+
+    async def wait_until_shutdown(self) -&gt; None:
+        &#34;&#34;&#34;Awaits until the actor has shutdown.
+        &#34;&#34;&#34;
+        await self._actor.wait_until_shutdown()
+
+    def __getitem__(self, key: str):
+        &#34;&#34;&#34;Get cached value of key
+        &#34;&#34;&#34;
+        return self._cache.__getitem__(key)
+
+    def __setitem__(self, key: str, value: typing.Any):
+        &#34;&#34;&#34;Cache a key with value for messages.
+        if a cached key appears as a message field, its value will be assigned automatically.
+
+        Args:
+            key (str): Key to cache.
+            value (typing.Any): Value to cache.
+        &#34;&#34;&#34;
+        return self._cache.__setitem__(key, value)
+
+    def __delitem__(self, key: str):
+        &#34;&#34;&#34;Delete a cached key.
+        &#34;&#34;&#34;
+        return self._cache.__delitem__(key)
+
+    @property
+    def initialized(self) -&gt; bool:
+        &#34;&#34;&#34;Whether or not the internal actor is initialized
+
+        Returns:
+            bool: Initialized status.
+        &#34;&#34;&#34;
+        return self._actor._initialize_event.is_set()
+
+    # NOTE: Although current tell implementation does not require async, we keep it so we can change the undelying implementation in the future.
+    async def tell(
+        self,
+        context: Context,
+        message: Message,
+        reply_to: typing.Optional[str] = None
+    ) -&gt; EnvelopeTracker:
+        &#34;&#34;&#34;Posts message to the internal actor queue.
+
+        Args:
+            context (libactors.Context): Context object.
+            message (libactors.Message): Message to post.
+            reply_to (str): Context identity, can be used to send reply to actor beside sender
+
+        Returns:
+            EnvelopeTracker: Envelope tracker to track message progress and its result.
+        &#34;&#34;&#34;
+        envelope = Envelope(
+            id=str(uuid.uuid4()),
+            sender=context.identity,
+            receiver=self._actor_id,
+            reply_to=reply_to,
+            message=message,
+        )
+        return self._actor.post(envelope)
+
+    async def ask(self, context: Context, message: Message) -&gt; typing.Any:
+        &#34;&#34;&#34;Posts a message to the internal actor and returns the response (sync message handling).
+
+        Args:
+            context (Context): Context object.
+            message (Message): Message to post.
+
+        Raises:
+            RuntimeError: If message was not handled by the internal actor.
+
+        Returns:
+            typing.Any: Message handled result.
+        &#34;&#34;&#34;
+        context.debug(f&#39;{context.identity} asking actor {self._actor_id}, message: {message}&#39;)
+        tracker = await self.tell(
+            context=context,
+            message=message,
+        )
+        context.debug(f&#39;{context.identity} awaiting on tracker: {tracker}&#39;)
+        result = await tracker
+        if not tracker.is_handled:
+            raise RuntimeError(
+                f&#39;actor: {self._actor_id} of type {type(self._actor)} did not handle message {type(message)}&#39;
+            )
+        return result
+
+    def __getattr__(self, func: str) -&gt; typing.Callable:
+        &#34;&#34;&#34;Automagically send messages as function calls.
+        instead of creating messages and send them using ask/tell, this allows the callee to send message by invoking functions:
+
+        &gt;&gt;&gt; await proxy.do_something(context, a=1, b=&#39;2&#39;) # is equivelant to:
+        &gt;&gt;&gt; await proxy.tell(context, DoSomething(a=1, b=&#39;2&#39;)) # DoSomething is a handled message by the internal actor
+
+        Args:
+            func (str): message to send, words separated by &#39;_&#39;.
+
+        Returns:
+            typing.Callable: A function that builds a message and send it (ask/tell).
+        &#34;&#34;&#34;
+        message = &#39;&#39;.join(s.capitalize() for s in func.split(&#39;_&#39;))
+        message_cls = self._actor._router.get_message_cls(message)
+
+        async def message_sender(context: Context, sync: bool = False, **kwargs):
+            for key in message_cls.__dataclass_fields__.keys():
+                if key not in kwargs and key in self._cache:
+                    kwargs[key] = self._cache[key]
+            message = message_cls(**kwargs)
+            if sync:
+                return await self.ask(context, message)
+            else:
+                return await self.tell(context, message)
+
+        # Caching message sender.
+        message_sender.__name__ = f&#39;_proxy_auto_generated_{func}&#39;
+        self.__setattr__(func, message_sender)
+        return message_sender</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="libactors.ActorProxy.actor_id"><code class="name">var <span class="ident">actor_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def actor_id(self):
+    return self._actor_id</code></pre>
+</details>
+</dd>
+<dt id="libactors.ActorProxy.actor_type"><code class="name">var <span class="ident">actor_type</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def actor_type(self):
+    return type(self._actor)</code></pre>
+</details>
+</dd>
+<dt id="libactors.ActorProxy.initialized"><code class="name">var <span class="ident">initialized</span> : bool</code></dt>
+<dd>
+<div class="desc"><p>Whether or not the internal actor is initialized</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>Initialized status.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def initialized(self) -&gt; bool:
+    &#34;&#34;&#34;Whether or not the internal actor is initialized
+
+    Returns:
+        bool: Initialized status.
+    &#34;&#34;&#34;
+    return self._actor._initialize_event.is_set()</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="libactors.ActorProxy.ask"><code class="name flex">
+<span>async def <span class="ident">ask</span></span>(<span>self, context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, message: <a title="libactors.message.Message" href="message.html#libactors.message.Message">Message</a>) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Posts a message to the internal actor and returns the response (sync message handling).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code><a title="libactors.Context" href="#libactors.Context">Context</a></code></dt>
+<dd>Context object.</dd>
+<dt><strong><code>message</code></strong> :&ensp;<code><a title="libactors.Message" href="#libactors.Message">Message</a></code></dt>
+<dd>Message to post.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>RuntimeError</code></dt>
+<dd>If message was not handled by the internal actor.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Any</code></dt>
+<dd>Message handled result.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def ask(self, context: Context, message: Message) -&gt; typing.Any:
+    &#34;&#34;&#34;Posts a message to the internal actor and returns the response (sync message handling).
+
+    Args:
+        context (Context): Context object.
+        message (Message): Message to post.
+
+    Raises:
+        RuntimeError: If message was not handled by the internal actor.
+
+    Returns:
+        typing.Any: Message handled result.
+    &#34;&#34;&#34;
+    context.debug(f&#39;{context.identity} asking actor {self._actor_id}, message: {message}&#39;)
+    tracker = await self.tell(
+        context=context,
+        message=message,
+    )
+    context.debug(f&#39;{context.identity} awaiting on tracker: {tracker}&#39;)
+    result = await tracker
+    if not tracker.is_handled:
+        raise RuntimeError(
+            f&#39;actor: {self._actor_id} of type {type(self._actor)} did not handle message {type(message)}&#39;
+        )
+    return result</code></pre>
+</details>
+</dd>
+<dt id="libactors.ActorProxy.tell"><code class="name flex">
+<span>async def <span class="ident">tell</span></span>(<span>self, context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, message: <a title="libactors.message.Message" href="message.html#libactors.message.Message">Message</a>, reply_to: Optional[str] = None) ‑> <a title="libactors.actor.actor.EnvelopeTracker" href="actor/actor.html#libactors.actor.actor.EnvelopeTracker">EnvelopeTracker</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Posts message to the internal actor queue.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code><a title="libactors.Context" href="#libactors.Context">Context</a></code></dt>
+<dd>Context object.</dd>
+<dt><strong><code>message</code></strong> :&ensp;<code><a title="libactors.Message" href="#libactors.Message">Message</a></code></dt>
+<dd>Message to post.</dd>
+<dt><strong><code>reply_to</code></strong> :&ensp;<code>str</code></dt>
+<dd>Context identity, can be used to send reply to actor beside sender</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>EnvelopeTracker</code></dt>
+<dd>Envelope tracker to track message progress and its result.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def tell(
+    self,
+    context: Context,
+    message: Message,
+    reply_to: typing.Optional[str] = None
+) -&gt; EnvelopeTracker:
+    &#34;&#34;&#34;Posts message to the internal actor queue.
+
+    Args:
+        context (libactors.Context): Context object.
+        message (libactors.Message): Message to post.
+        reply_to (str): Context identity, can be used to send reply to actor beside sender
+
+    Returns:
+        EnvelopeTracker: Envelope tracker to track message progress and its result.
+    &#34;&#34;&#34;
+    envelope = Envelope(
+        id=str(uuid.uuid4()),
+        sender=context.identity,
+        receiver=self._actor_id,
+        reply_to=reply_to,
+        message=message,
+    )
+    return self._actor.post(envelope)</code></pre>
+</details>
+</dd>
+<dt id="libactors.ActorProxy.wait_until_initialized"><code class="name flex">
+<span>async def <span class="ident">wait_until_initialized</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Awaits until the actor is initialized.
+If actor initialization has failed (raises), the exception will be raised in the callee context.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def wait_until_initialized(self) -&gt; None:
+    &#34;&#34;&#34;Awaits until the actor is initialized.
+    If actor initialization has failed (raises), the exception will be raised in the callee context.
+    &#34;&#34;&#34;
+    await self._actor.wait_until_initialized()</code></pre>
+</details>
+</dd>
+<dt id="libactors.ActorProxy.wait_until_shutdown"><code class="name flex">
+<span>async def <span class="ident">wait_until_shutdown</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Awaits until the actor has shutdown.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def wait_until_shutdown(self) -&gt; None:
+    &#34;&#34;&#34;Awaits until the actor has shutdown.
+    &#34;&#34;&#34;
+    await self._actor.wait_until_shutdown()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="libactors.Context"><code class="flex name class">
+<span>class <span class="ident">Context</span></span>
+<span>(</span><span>core: <a title="libactors.Core" href="#libactors.Core">Core</a>, log, identity: str, envelope: Optional[<a title="libactors.message.Envelope" href="message.html#libactors.message.Envelope">Envelope</a>] = None, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Escorting object which encapsulate core and log access.
+It is recommend to inherit from this context object to expand its functionality for external services and utilities.</p>
+<p>Context object to access the core, log and self identity.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>core</code></strong> :&ensp;<code><a title="libactors.Core" href="#libactors.Core">Core</a></code></dt>
+<dd>Core object.</dd>
+<dt><strong><code>log</code></strong></dt>
+<dd>Logging-alike object.</dd>
+<dt><strong><code>identity</code></strong> :&ensp;<code>str</code></dt>
+<dd>context identity (usually actor's id).</dd>
+<dt><strong><code>envelope</code></strong> :&ensp;<code>typing.Optional[<a title="libactors.Envelope" href="#libactors.Envelope">Envelope</a>]</code>, optional</dt>
+<dd>Current processed evenlope if any. Defaults to None.</dd>
+</dl>
+<h2 id="kwargs">Kwargs</h2>
+<p>Any key-word argument will be automatically bind to the log.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Context:
+    &#34;&#34;&#34;Escorting object which encapsulate core and log access.
+    It is recommend to inherit from this context object to expand its functionality for external services and utilities.
+    &#34;&#34;&#34;
+    def __init__(
+        self,
+        core: &#39;Core&#39;,
+        log,
+        identity: str,
+        envelope: typing.Optional[Envelope] = None,
+        **kwargs
+    ):
+        &#34;&#34;&#34;Context object to access the core, log and self identity.
+
+        Args:
+            core (libactors.Core): Core object.
+            log: Logging-alike object.
+            identity (str): context identity (usually actor&#39;s id).
+            envelope (typing.Optional[libactors.Envelope], optional): Current processed evenlope if any. Defaults to None.
+
+        Kwargs:
+            Any key-word argument will be automatically bind to the log.
+        &#34;&#34;&#34;
+        self._core = core
+        self._log = log
+        self._identity = identity
+        self._envelope = envelope
+
+        # Bind identity and other kwargs.
+        if self._log:
+            kwargs.update(identity=identity)
+            self._log = self._log.bind(**kwargs)
+
+    def __repr__(self):
+        return f&#39;&#39;&#39;{self.__class__.__name__}(
+    core        = {self._core},
+    log         = {self._log},
+    identity    = {self._identity!r},
+    envelope    = {self._envelope},
+)&#39;&#39;&#39;
+
+    def __call__(self, *args, **kwargs) -&gt; &#39;Context&#39;:
+        &#34;&#34;&#34;Derive new context from the existing one.
+
+        Returns:
+            libactors.Context: Derived context.
+        &#34;&#34;&#34;
+        # TODO: buglet, we need to pass kwargs as well (for log bindings).
+        # Each keyword is overriden if passed, otherwise we use the current value of this context.
+        return Context(
+            core=kwargs.get(&#39;core&#39;) or self._core,
+            log=kwargs.get(&#39;log&#39;) or self._log,
+            identity=kwargs.get(&#39;identity&#39;) or self._identity,
+            envelope=kwargs.get(&#39;envelope&#39;) or self._envelope,
+        )
+
+    @contextlib.contextmanager
+    def bind(self, **bindings):
+        &#34;&#34;&#34;Context manager for temporarty log bindings.
+
+        Kwargs:
+            Any key-word argument will be automatically bind to the log.
+        &#34;&#34;&#34;
+        try:
+            # Saving old bindings logger object to restore.
+            old_log = self._log
+            # Bind.
+            self._log = self._log.bind(**bindings)
+            yield
+        finally:
+            # Restore old logger with old bindings.
+            self._log = old_log
+
+    def bind_function(**bindings):
+        &#34;&#34;&#34;Decorator to use for temporary log bindings as long as the decorated function runs.
+        The decorated function must have a context argument in its signature.
+
+        &gt;&gt;&gt; @Context.bind_function(foo=&#39;bar&#39;)
+        ... async def function(self, context):
+        ...     context.info(&#39;log&#39;)  # {&#39;foo&#39;: &#39;bar&#39;, &#39;event&#39;: &#39;log&#39;}
+        &#34;&#34;&#34;
+        def _bound(func):
+            def _get_context(func, *args, **kwargs):
+                &#34;&#34;&#34;Finds the value of the context argument in a function call.
+
+                Raises:
+                    RuntimeError: If `context` argument was not passed.
+                &#34;&#34;&#34;
+                signature = inspect.signature(func)
+                context = kwargs.get(&#39;context&#39;)
+                if context is None:
+                    try:
+                        context = args[list(signature.parameters.keys()).index(&#39;context&#39;)]
+                    except Exception:
+                        raise RuntimeError(&#39;cannot bind contextless function&#39;)
+                return context
+
+            # The following two wrappers binds before calling the function (separated for coroutine and regular functions).
+            @functools.wraps(func)
+            async def awrapper(*args, **kwargs):
+                with _get_context(func, *args, **kwargs).bind(**bindings):
+                    return await func(*args, **kwargs)
+
+            @functools.wraps(func)
+            def wrapper(*args, **kwargs):
+                with _get_context(func, *args, **kwargs).bind(**bindings):
+                    return func(*args, **kwargs)
+
+            return awrapper if asyncio.iscoroutinefunction(func) else wrapper
+
+        return _bound
+
+    @property
+    def core(self):
+        &#34;&#34;&#34;The internal core object.
+
+        Returns:
+            libactors.Core: The internal core object.
+        &#34;&#34;&#34;
+        return self._core
+
+    @property
+    def log(self) -&gt; typing.Callable:
+        &#34;&#34;&#34;The internal log function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal log function.
+        &#34;&#34;&#34;
+        return self._log.log
+
+    @property
+    def envelope(self) -&gt; typing.Optional[Envelope]:
+        &#34;&#34;&#34;Current handled envelope if any.
+
+        Returns:
+            typing.Optional[libactors.Envelope]: Current handled envelope or `None`.
+        &#34;&#34;&#34;
+        return self._envelope
+
+    @property
+    def sender(self):
+        return self._envelope.sender
+
+    @property
+    def identity(self):
+        return self._identity
+
+    @property
+    def debug(self):
+        &#34;&#34;&#34;The internal debug function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal debug function.
+        &#34;&#34;&#34;
+        return self._log.debug
+
+    @property
+    def info(self):
+        &#34;&#34;&#34;The internal info function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal info function.
+        &#34;&#34;&#34;
+        return self._log.info
+
+    @property
+    def warning(self):
+        &#34;&#34;&#34;The internal warning function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal warning function.
+        &#34;&#34;&#34;
+        return self._log.warning
+
+    @property
+    def error(self):
+        &#34;&#34;&#34;The internal error function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal error function.
+        &#34;&#34;&#34;
+        return self._log.error
+
+    @property
+    def fatal(self):
+        &#34;&#34;&#34;The internal fatal function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal fatal function.
+        &#34;&#34;&#34;
+        return self._log.fatal
+
+    @property
+    def exception(self):
+        &#34;&#34;&#34;The internal exception function of the internal logger object.
+
+        Returns:
+            typing.Callable: The internal exception function.
+        &#34;&#34;&#34;
+        return self._log.exception
+
+    async def create_actor(
+        self,
+        actor_id: str,
+        actor_cls,
+        log_bindings: typing.Dict[str, typing.Any] = {},
+        *args,
+        **kwargs
+    ):
+        &#34;&#34;&#34;Creates an actor of type `actor_cls`.
+
+        Args:
+            actor_id (str): Name of the newborn actor (suffix).
+            actor_cls (typing.Type[libactors.Actor]): Type of the newborn actor.
+            log_bindings (typing.Dict[str, typing.Any], optional): Log binding for derived context. Defaults to {}.
+
+        Returns:
+            libactors.ActorProxy: Actor proxy that wraps the newborn actor.
+        &#34;&#34;&#34;
+        return await self._core.create_actor(self, actor_id, actor_cls, *args, **kwargs)
+
+    def get_proxy(self, actor_id: str):
+        &#34;&#34;&#34;Get proxy of `actor_id` actor.
+
+        Args:
+            actor_id (str): The actor id to get proxy of.
+
+        Returns:
+            libactors.ActorProxy: The proxy of `actor_id`.
+        &#34;&#34;&#34;
+        return self._core.get_proxy(self, actor_id)</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="libactors.Context.core"><code class="name">var <span class="ident">core</span></code></dt>
+<dd>
+<div class="desc"><p>The internal core object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.Core" href="#libactors.Core">Core</a></code></dt>
+<dd>The internal core object.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def core(self):
+    &#34;&#34;&#34;The internal core object.
+
+    Returns:
+        libactors.Core: The internal core object.
+    &#34;&#34;&#34;
+    return self._core</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.debug"><code class="name">var <span class="ident">debug</span></code></dt>
+<dd>
+<div class="desc"><p>The internal debug function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal debug function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def debug(self):
+    &#34;&#34;&#34;The internal debug function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal debug function.
+    &#34;&#34;&#34;
+    return self._log.debug</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.envelope"><code class="name">var <span class="ident">envelope</span> : Optional[<a title="libactors.message.Envelope" href="message.html#libactors.message.Envelope">Envelope</a>]</code></dt>
+<dd>
+<div class="desc"><p>Current handled envelope if any.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Optional[<a title="libactors.Envelope" href="#libactors.Envelope">Envelope</a>]</code></dt>
+<dd>Current handled envelope or <code>None</code>.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def envelope(self) -&gt; typing.Optional[Envelope]:
+    &#34;&#34;&#34;Current handled envelope if any.
+
+    Returns:
+        typing.Optional[libactors.Envelope]: Current handled envelope or `None`.
+    &#34;&#34;&#34;
+    return self._envelope</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.error"><code class="name">var <span class="ident">error</span></code></dt>
+<dd>
+<div class="desc"><p>The internal error function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal error function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def error(self):
+    &#34;&#34;&#34;The internal error function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal error function.
+    &#34;&#34;&#34;
+    return self._log.error</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.exception"><code class="name">var <span class="ident">exception</span></code></dt>
+<dd>
+<div class="desc"><p>The internal exception function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal exception function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def exception(self):
+    &#34;&#34;&#34;The internal exception function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal exception function.
+    &#34;&#34;&#34;
+    return self._log.exception</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.fatal"><code class="name">var <span class="ident">fatal</span></code></dt>
+<dd>
+<div class="desc"><p>The internal fatal function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal fatal function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def fatal(self):
+    &#34;&#34;&#34;The internal fatal function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal fatal function.
+    &#34;&#34;&#34;
+    return self._log.fatal</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.identity"><code class="name">var <span class="ident">identity</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def identity(self):
+    return self._identity</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.info"><code class="name">var <span class="ident">info</span></code></dt>
+<dd>
+<div class="desc"><p>The internal info function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal info function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def info(self):
+    &#34;&#34;&#34;The internal info function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal info function.
+    &#34;&#34;&#34;
+    return self._log.info</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.log"><code class="name">var <span class="ident">log</span> : Callable</code></dt>
+<dd>
+<div class="desc"><p>The internal log function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal log function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def log(self) -&gt; typing.Callable:
+    &#34;&#34;&#34;The internal log function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal log function.
+    &#34;&#34;&#34;
+    return self._log.log</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.sender"><code class="name">var <span class="ident">sender</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sender(self):
+    return self._envelope.sender</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.warning"><code class="name">var <span class="ident">warning</span></code></dt>
+<dd>
+<div class="desc"><p>The internal warning function of the internal logger object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Callable</code></dt>
+<dd>The internal warning function.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def warning(self):
+    &#34;&#34;&#34;The internal warning function of the internal logger object.
+
+    Returns:
+        typing.Callable: The internal warning function.
+    &#34;&#34;&#34;
+    return self._log.warning</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="libactors.Context.bind"><code class="name flex">
+<span>def <span class="ident">bind</span></span>(<span>self, **bindings)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Context manager for temporarty log bindings.</p>
+<h2 id="kwargs">Kwargs</h2>
+<p>Any key-word argument will be automatically bind to the log.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@contextlib.contextmanager
+def bind(self, **bindings):
+    &#34;&#34;&#34;Context manager for temporarty log bindings.
+
+    Kwargs:
+        Any key-word argument will be automatically bind to the log.
+    &#34;&#34;&#34;
+    try:
+        # Saving old bindings logger object to restore.
+        old_log = self._log
+        # Bind.
+        self._log = self._log.bind(**bindings)
+        yield
+    finally:
+        # Restore old logger with old bindings.
+        self._log = old_log</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.bind_function"><code class="name flex">
+<span>def <span class="ident">bind_function</span></span>(<span>**bindings)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Decorator to use for temporary log bindings as long as the decorated function runs.
+The decorated function must have a context argument in its signature.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; @Context.bind_function(foo='bar')
+... async def function(self, context):
+...     context.info('log')  # {'foo': 'bar', 'event': 'log'}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def bind_function(**bindings):
+    &#34;&#34;&#34;Decorator to use for temporary log bindings as long as the decorated function runs.
+    The decorated function must have a context argument in its signature.
+
+    &gt;&gt;&gt; @Context.bind_function(foo=&#39;bar&#39;)
+    ... async def function(self, context):
+    ...     context.info(&#39;log&#39;)  # {&#39;foo&#39;: &#39;bar&#39;, &#39;event&#39;: &#39;log&#39;}
+    &#34;&#34;&#34;
+    def _bound(func):
+        def _get_context(func, *args, **kwargs):
+            &#34;&#34;&#34;Finds the value of the context argument in a function call.
+
+            Raises:
+                RuntimeError: If `context` argument was not passed.
+            &#34;&#34;&#34;
+            signature = inspect.signature(func)
+            context = kwargs.get(&#39;context&#39;)
+            if context is None:
+                try:
+                    context = args[list(signature.parameters.keys()).index(&#39;context&#39;)]
+                except Exception:
+                    raise RuntimeError(&#39;cannot bind contextless function&#39;)
+            return context
+
+        # The following two wrappers binds before calling the function (separated for coroutine and regular functions).
+        @functools.wraps(func)
+        async def awrapper(*args, **kwargs):
+            with _get_context(func, *args, **kwargs).bind(**bindings):
+                return await func(*args, **kwargs)
+
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            with _get_context(func, *args, **kwargs).bind(**bindings):
+                return func(*args, **kwargs)
+
+        return awrapper if asyncio.iscoroutinefunction(func) else wrapper
+
+    return _bound</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.create_actor"><code class="name flex">
+<span>async def <span class="ident">create_actor</span></span>(<span>self, actor_id: str, actor_cls, log_bindings: Dict[str, Any] = {}, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates an actor of type <code>actor_cls</code>.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actor_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newborn actor (suffix).</dd>
+<dt><strong><code>actor_cls</code></strong> :&ensp;<code>typing.Type[<a title="libactors.Actor" href="#libactors.Actor">Actor</a>]</code></dt>
+<dd>Type of the newborn actor.</dd>
+<dt><strong><code>log_bindings</code></strong> :&ensp;<code>typing.Dict[str, typing.Any]</code>, optional</dt>
+<dd>Log binding for derived context. Defaults to {}.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.ActorProxy" href="#libactors.ActorProxy">ActorProxy</a></code></dt>
+<dd>Actor proxy that wraps the newborn actor.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_actor(
+    self,
+    actor_id: str,
+    actor_cls,
+    log_bindings: typing.Dict[str, typing.Any] = {},
+    *args,
+    **kwargs
+):
+    &#34;&#34;&#34;Creates an actor of type `actor_cls`.
+
+    Args:
+        actor_id (str): Name of the newborn actor (suffix).
+        actor_cls (typing.Type[libactors.Actor]): Type of the newborn actor.
+        log_bindings (typing.Dict[str, typing.Any], optional): Log binding for derived context. Defaults to {}.
+
+    Returns:
+        libactors.ActorProxy: Actor proxy that wraps the newborn actor.
+    &#34;&#34;&#34;
+    return await self._core.create_actor(self, actor_id, actor_cls, *args, **kwargs)</code></pre>
+</details>
+</dd>
+<dt id="libactors.Context.get_proxy"><code class="name flex">
+<span>def <span class="ident">get_proxy</span></span>(<span>self, actor_id: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get proxy of <code>actor_id</code> actor.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actor_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The actor id to get proxy of.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.ActorProxy" href="#libactors.ActorProxy">ActorProxy</a></code></dt>
+<dd>The proxy of <code>actor_id</code>.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_proxy(self, actor_id: str):
+    &#34;&#34;&#34;Get proxy of `actor_id` actor.
+
+    Args:
+        actor_id (str): The actor id to get proxy of.
+
+    Returns:
+        libactors.ActorProxy: The proxy of `actor_id`.
+    &#34;&#34;&#34;
+    return self._core.get_proxy(self, actor_id)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="libactors.Core"><code class="flex name class">
+<span>class <span class="ident">Core</span></span>
+<span>(</span><span>context: Optional[<a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The libactors core, the core is resposible of:</p>
+<ul>
+<li>Actors creation.</li>
+<li>Actors lookup (returns <code><a title="libactors.ActorProxy" href="#libactors.ActorProxy">ActorProxy</a></code>).</li>
+<li>System shutdown (shuts down all created actors).</li>
+</ul>
+<p>In most of the cases there will be only one <code><a title="libactors.Core" href="#libactors.Core">Core</a></code> in the system (it can be easily retrieved using the <code><a title="libactors.get_core" href="#libactors.get_core">get_core()</a></code> function), but it is not enforced.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Core:
+    &#34;&#34;&#34;The libactors core, the core is resposible of:
+
+    * Actors creation.
+    * Actors lookup (returns `ActorProxy`).
+    * System shutdown (shuts down all created actors).
+
+    In most of the cases there will be only one `Core` in the system (it can be easily retrieved using the `get_core` function), but it is not enforced.
+    &#34;&#34;&#34;
+    def __init__(self, context: typing.Optional[Context] = None):
+        # NOTE: The context and the core are chicken-egg problem.
+        # On one side, the core uses context for logging and resolving actor proxies.
+        # On the other side, the core is accessible from the context so other actors will be able to ask their core stuff.
+        # Therefore, usually the core will be initialized without a context.
+        # After creating a context with that empty core it will be assigned to the core using the `set_context` function.
+        self._actors = dict()
+        self._lock = asyncio.Lock()
+        self._running = True
+        self._context = context
+
+    @property
+    def context(self) -&gt; Context:
+        return self._context
+
+    def set_context(self, context):
+        &#34;&#34;&#34;Context setter for core (replaces current internal context).
+
+        Args:
+            context (libactors.Context): New context to set.
+        &#34;&#34;&#34;
+        self._context = context
+
+    def is_actor_type_exists(self, actor_cls: typing.Type[Actor]) -&gt; bool:
+        &#34;&#34;&#34;Checks if actor of type `actor_cls` is already registered.
+
+        Args:
+            actor_cls (typing.Type[Actor]): Actor type to check if registered.
+
+        Returns:
+            bool: `True` iff `actor_cls` is registered.
+        &#34;&#34;&#34;
+        return actor_cls in ACTOR_REPOSITORY
+
+    def _generate_actor_id(self, base: str, actor_id: str):
+        # NOTE: it will not work on windows, since path separator is not &#39;/&#39;.
+        return str(pathlib.Path(base) / actor_id)
+
+    def _assert_running(self, msg: str = &#39;Core is not running&#39;):
+        if not self._running:
+            raise RuntimeError(msg)
+
+    async def create_actor(
+        self,
+        callee_context: Context,
+        actor_id: str,
+        actor_cls: typing.Type[Actor],
+        log_bindings: typing.Dict[str, typing.Any] = {},
+        *args,
+        **kwargs
+    ) -&gt; ActorProxy:
+        &#34;&#34;&#34;Creates an actor of type `actor_cls` with a given `actor_id` name.
+        args and kwargs are passed directly to the internal actor `__init__` function.
+
+        Args:
+            callee_context (Context): Callee context to derive new context for the newborn actor.
+            actor_id (str): Name of the newborn actor.
+            actor_cls (typing.Type[libactors.Actor]): Type of the newborn actor.
+            log_bindings (typing.Dict[str, typing.Any]): Log binding for derived context.
+
+        Raises:
+            RuntimeError: If `actor_id` already exists.
+
+        Returns:
+            ActorProxy: Actor proxy that wraps the newborn actor.
+        &#34;&#34;&#34;
+
+        self._assert_running()
+
+        actor_id = self._generate_actor_id(callee_context.identity, actor_id)
+
+        self.context.info(f&#39;creating actor: `{actor_cls}` with id: `{actor_id}`&#39;)
+        async with self._lock:
+            # Checking if core was shutdown.
+            self._assert_running(&#39;core is no longer running&#39;)
+
+            # Checking if `actor_id` already exists.
+            if actor_id in self._actors:
+                raise RuntimeError(f&#39;actor {actor_id} already exists&#39;)
+
+            # Creating actor and putting it in the internal actors mapping.
+            actor = actor_cls(  # type: ignore
+                # Derived context of the new created actor is expanded with new `log_bindings` and its new identity is set.
+                context     = callee_context(identity=actor_id, **log_bindings),
+                actor_id    = actor_id,
+                *args,
+                **kwargs
+            )
+            # The actor is saved in the private actors mapping.
+            self._actors[actor_id] = actor
+
+            # Starting actor (creates serve task internally)
+            actor.start()  # TODO: for completeness who is in charge of shutdown.
+
+            return ActorProxy(
+                actor=actor,
+                actor_id=actor_id,
+            )
+
+    async def remove_actor(self, actor_id: str):
+        &#34;&#34;&#34;Remove a shut-down actor
+
+        Args:
+            actor_id: ID of actor to remove
+
+        Raises:
+            RuntimeError if the core is not running
+            ValueError if the Actor is not shut down
+        &#34;&#34;&#34;
+        self._assert_running()
+
+        if actor_id not in self._actors:
+            self.context.warning(f&#39;remove_actor failed: no actor with id: {actor_id}&#39;)
+            return
+
+        actor = self._actors[actor_id]
+        if not actor.is_shutdown():
+            raise ValueError(&#39;Actor {actor_id} is not shut down&#39;)
+
+        del self._actors[actor_id]
+
+    async def shutdown(self):
+        &#34;&#34;&#34;Shuts down the core:
+
+        * Disable creating new actors.
+        * Send shutdown message to all created actors.
+        * Awaits until all actors are shutdown.
+        &#34;&#34;&#34;
+        # NOTE: We need to acquire the lock just to make sure there is no inprogress actor creation.
+        async with self._lock:
+            self.context.info(&#39;shutting down&#39;)
+            self._running = False
+
+        proxies = [self.get_proxy(self.context, actor_id) for actor_id in self._actors]
+
+        for proxy in proxies:
+            await proxy.tell(
+                context=self.context,
+                message=ShutdownMessage(),
+            )
+
+        await asyncio.gather(
+            *[proxy.wait_until_shutdown() for proxy in proxies],
+            return_exceptions=True,
+        )
+
+    def get_proxy(self, callee_context: Context, actor_id: str) -&gt; ActorProxy:
+        &#34;&#34;&#34;Get proxy of `actor_id` actor.
+
+        Args:
+            callee_context (Context): Context of the callee (`actor_id` will be concat to the callee derived identity).
+            actor_id (str): The actor id to get proxy of.
+
+        Raises:
+            RuntimeError: If `actor_id` cannot be found.
+
+        Returns:
+            ActorProxy: The proxy of `actor_id`.
+        &#34;&#34;&#34;
+        actor_id = self._generate_actor_id(callee_context.identity, actor_id)
+
+        if actor_id not in self._actors:
+            raise RuntimeError(f&#39;actor: `{actor_id}` doesnt exist&#39;)
+        return ActorProxy(
+            actor=self._actors[actor_id],
+            actor_id=actor_id,
+        )
+
+    @property
+    def actors(self) -&gt; typing.Dict[str, Actor]:
+        &#34;&#34;&#34;Created actors mapping (`actor_id` to `Actor`).
+
+        Returns:
+            typing.Dict[str, Actor]: created actors mapping.
+        &#34;&#34;&#34;
+        return self._actors</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="libactors.Core.actors"><code class="name">var <span class="ident">actors</span> : Dict[str, <a title="libactors.actor.actor.Actor" href="actor/actor.html#libactors.actor.actor.Actor">Actor</a>]</code></dt>
+<dd>
+<div class="desc"><p>Created actors mapping (<code>actor_id</code> to <code><a title="libactors.Actor" href="#libactors.Actor">Actor</a></code>).</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>typing.Dict[str, <a title="libactors.Actor" href="#libactors.Actor">Actor</a>]</code></dt>
+<dd>created actors mapping.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def actors(self) -&gt; typing.Dict[str, Actor]:
+    &#34;&#34;&#34;Created actors mapping (`actor_id` to `Actor`).
+
+    Returns:
+        typing.Dict[str, Actor]: created actors mapping.
+    &#34;&#34;&#34;
+    return self._actors</code></pre>
+</details>
+</dd>
+<dt id="libactors.Core.context"><code class="name">var <span class="ident">context</span> : <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def context(self) -&gt; Context:
+    return self._context</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="libactors.Core.create_actor"><code class="name flex">
+<span>async def <span class="ident">create_actor</span></span>(<span>self, callee_context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, actor_id: str, actor_cls: Type[<a title="libactors.actor.actor.Actor" href="actor/actor.html#libactors.actor.actor.Actor">Actor</a>], log_bindings: Dict[str, Any] = {}, *args, **kwargs) ‑> <a title="libactors.actor.proxy.ActorProxy" href="actor/proxy.html#libactors.actor.proxy.ActorProxy">ActorProxy</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates an actor of type <code>actor_cls</code> with a given <code>actor_id</code> name.
+args and kwargs are passed directly to the internal actor <code>__init__</code> function.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>callee_context</code></strong> :&ensp;<code><a title="libactors.Context" href="#libactors.Context">Context</a></code></dt>
+<dd>Callee context to derive new context for the newborn actor.</dd>
+<dt><strong><code>actor_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newborn actor.</dd>
+<dt><strong><code>actor_cls</code></strong> :&ensp;<code>typing.Type[<a title="libactors.Actor" href="#libactors.Actor">Actor</a>]</code></dt>
+<dd>Type of the newborn actor.</dd>
+<dt><strong><code>log_bindings</code></strong> :&ensp;<code>typing.Dict[str, typing.Any]</code></dt>
+<dd>Log binding for derived context.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>RuntimeError</code></dt>
+<dd>If <code>actor_id</code> already exists.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.ActorProxy" href="#libactors.ActorProxy">ActorProxy</a></code></dt>
+<dd>Actor proxy that wraps the newborn actor.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_actor(
+    self,
+    callee_context: Context,
+    actor_id: str,
+    actor_cls: typing.Type[Actor],
+    log_bindings: typing.Dict[str, typing.Any] = {},
+    *args,
+    **kwargs
+) -&gt; ActorProxy:
+    &#34;&#34;&#34;Creates an actor of type `actor_cls` with a given `actor_id` name.
+    args and kwargs are passed directly to the internal actor `__init__` function.
+
+    Args:
+        callee_context (Context): Callee context to derive new context for the newborn actor.
+        actor_id (str): Name of the newborn actor.
+        actor_cls (typing.Type[libactors.Actor]): Type of the newborn actor.
+        log_bindings (typing.Dict[str, typing.Any]): Log binding for derived context.
+
+    Raises:
+        RuntimeError: If `actor_id` already exists.
+
+    Returns:
+        ActorProxy: Actor proxy that wraps the newborn actor.
+    &#34;&#34;&#34;
+
+    self._assert_running()
+
+    actor_id = self._generate_actor_id(callee_context.identity, actor_id)
+
+    self.context.info(f&#39;creating actor: `{actor_cls}` with id: `{actor_id}`&#39;)
+    async with self._lock:
+        # Checking if core was shutdown.
+        self._assert_running(&#39;core is no longer running&#39;)
+
+        # Checking if `actor_id` already exists.
+        if actor_id in self._actors:
+            raise RuntimeError(f&#39;actor {actor_id} already exists&#39;)
+
+        # Creating actor and putting it in the internal actors mapping.
+        actor = actor_cls(  # type: ignore
+            # Derived context of the new created actor is expanded with new `log_bindings` and its new identity is set.
+            context     = callee_context(identity=actor_id, **log_bindings),
+            actor_id    = actor_id,
+            *args,
+            **kwargs
+        )
+        # The actor is saved in the private actors mapping.
+        self._actors[actor_id] = actor
+
+        # Starting actor (creates serve task internally)
+        actor.start()  # TODO: for completeness who is in charge of shutdown.
+
+        return ActorProxy(
+            actor=actor,
+            actor_id=actor_id,
+        )</code></pre>
+</details>
+</dd>
+<dt id="libactors.Core.get_proxy"><code class="name flex">
+<span>def <span class="ident">get_proxy</span></span>(<span>self, callee_context: <a title="libactors.context.Context" href="context.html#libactors.context.Context">Context</a>, actor_id: str) ‑> <a title="libactors.actor.proxy.ActorProxy" href="actor/proxy.html#libactors.actor.proxy.ActorProxy">ActorProxy</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get proxy of <code>actor_id</code> actor.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>callee_context</code></strong> :&ensp;<code><a title="libactors.Context" href="#libactors.Context">Context</a></code></dt>
+<dd>Context of the callee (<code>actor_id</code> will be concat to the callee derived identity).</dd>
+<dt><strong><code>actor_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The actor id to get proxy of.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>RuntimeError</code></dt>
+<dd>If <code>actor_id</code> cannot be found.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="libactors.ActorProxy" href="#libactors.ActorProxy">ActorProxy</a></code></dt>
+<dd>The proxy of <code>actor_id</code>.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_proxy(self, callee_context: Context, actor_id: str) -&gt; ActorProxy:
+    &#34;&#34;&#34;Get proxy of `actor_id` actor.
+
+    Args:
+        callee_context (Context): Context of the callee (`actor_id` will be concat to the callee derived identity).
+        actor_id (str): The actor id to get proxy of.
+
+    Raises:
+        RuntimeError: If `actor_id` cannot be found.
+
+    Returns:
+        ActorProxy: The proxy of `actor_id`.
+    &#34;&#34;&#34;
+    actor_id = self._generate_actor_id(callee_context.identity, actor_id)
+
+    if actor_id not in self._actors:
+        raise RuntimeError(f&#39;actor: `{actor_id}` doesnt exist&#39;)
+    return ActorProxy(
+        actor=self._actors[actor_id],
+        actor_id=actor_id,
+    )</code></pre>
+</details>
+</dd>
+<dt id="libactors.Core.is_actor_type_exists"><code class="name flex">
+<span>def <span class="ident">is_actor_type_exists</span></span>(<span>self, actor_cls: Type[<a title="libactors.actor.actor.Actor" href="actor/actor.html#libactors.actor.actor.Actor">Actor</a>]) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if actor of type <code>actor_cls</code> is already registered.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actor_cls</code></strong> :&ensp;<code>typing.Type[<a title="libactors.Actor" href="#libactors.Actor">Actor</a>]</code></dt>
+<dd>Actor type to check if registered.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd><code>True</code> iff <code>actor_cls</code> is registered.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_actor_type_exists(self, actor_cls: typing.Type[Actor]) -&gt; bool:
+    &#34;&#34;&#34;Checks if actor of type `actor_cls` is already registered.
+
+    Args:
+        actor_cls (typing.Type[Actor]): Actor type to check if registered.
+
+    Returns:
+        bool: `True` iff `actor_cls` is registered.
+    &#34;&#34;&#34;
+    return actor_cls in ACTOR_REPOSITORY</code></pre>
+</details>
+</dd>
+<dt id="libactors.Core.remove_actor"><code class="name flex">
+<span>async def <span class="ident">remove_actor</span></span>(<span>self, actor_id: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove a shut-down actor</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actor_id</code></strong></dt>
+<dd>ID of actor to remove</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<p>RuntimeError if the core is not running
+ValueError if the Actor is not shut down</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def remove_actor(self, actor_id: str):
+    &#34;&#34;&#34;Remove a shut-down actor
+
+    Args:
+        actor_id: ID of actor to remove
+
+    Raises:
+        RuntimeError if the core is not running
+        ValueError if the Actor is not shut down
+    &#34;&#34;&#34;
+    self._assert_running()
+
+    if actor_id not in self._actors:
+        self.context.warning(f&#39;remove_actor failed: no actor with id: {actor_id}&#39;)
+        return
+
+    actor = self._actors[actor_id]
+    if not actor.is_shutdown():
+        raise ValueError(&#39;Actor {actor_id} is not shut down&#39;)
+
+    del self._actors[actor_id]</code></pre>
+</details>
+</dd>
+<dt id="libactors.Core.set_context"><code class="name flex">
+<span>def <span class="ident">set_context</span></span>(<span>self, context)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Context setter for core (replaces current internal context).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code><a title="libactors.Context" href="#libactors.Context">Context</a></code></dt>
+<dd>New context to set.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_context(self, context):
+    &#34;&#34;&#34;Context setter for core (replaces current internal context).
+
+    Args:
+        context (libactors.Context): New context to set.
+    &#34;&#34;&#34;
+    self._context = context</code></pre>
+</details>
+</dd>
+<dt id="libactors.Core.shutdown"><code class="name flex">
+<span>async def <span class="ident">shutdown</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shuts down the core:</p>
+<ul>
+<li>Disable creating new actors.</li>
+<li>Send shutdown message to all created actors.</li>
+<li>Awaits until all actors are shutdown.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def shutdown(self):
+    &#34;&#34;&#34;Shuts down the core:
+
+    * Disable creating new actors.
+    * Send shutdown message to all created actors.
+    * Awaits until all actors are shutdown.
+    &#34;&#34;&#34;
+    # NOTE: We need to acquire the lock just to make sure there is no inprogress actor creation.
+    async with self._lock:
+        self.context.info(&#39;shutting down&#39;)
+        self._running = False
+
+    proxies = [self.get_proxy(self.context, actor_id) for actor_id in self._actors]
+
+    for proxy in proxies:
+        await proxy.tell(
+            context=self.context,
+            message=ShutdownMessage(),
+        )
+
+    await asyncio.gather(
+        *[proxy.wait_until_shutdown() for proxy in proxies],
+        return_exceptions=True,
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="libactors.Envelope"><code class="flex name class">
+<span>class <span class="ident">Envelope</span></span>
+<span>(</span><span>id: str, sender: str, receiver: str, message: <a title="libactors.message.Message" href="message.html#libactors.message.Message">Message</a>, reply_to: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Envelope which wraps a message with metadata, each envelope has unique id.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Envelope(mashumaro.DataClassJSONMixin):
+    &#34;&#34;&#34;Envelope which wraps a message with metadata, each envelope has unique id.
+    &#34;&#34;&#34;
+    id: str
+    sender: str
+    receiver: str
+    message: Message
+    reply_to: typing.Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mashumaro.serializer.json.DataClassJSONMixin</li>
+<li>mashumaro.serializer.base.dict.DataClassDictMixin</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="libactors.Envelope.id"><code class="name">var <span class="ident">id</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="libactors.Envelope.message"><code class="name">var <span class="ident">message</span> : <a title="libactors.message.Message" href="message.html#libactors.message.Message">Message</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="libactors.Envelope.receiver"><code class="name">var <span class="ident">receiver</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="libactors.Envelope.reply_to"><code class="name">var <span class="ident">reply_to</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="libactors.Envelope.sender"><code class="name">var <span class="ident">sender</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="libactors.Envelope.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>d, use_bytes=False, use_enum=False, use_datetime=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="libactors.Envelope.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self, use_bytes=False, use_enum=False, use_datetime=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="libactors.Message"><code class="flex name class">
+<span>class <span class="ident">Message</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Base message, any new message must derive from it.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Message(mashumaro.DataClassJSONMixin):
+    &#34;&#34;&#34;Base message, any new message must derive from it.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mashumaro.serializer.json.DataClassJSONMixin</li>
+<li>mashumaro.serializer.base.dict.DataClassDictMixin</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="libactors.actor.messages.ActletDoneMessage" href="actor/messages.html#libactors.actor.messages.ActletDoneMessage">ActletDoneMessage</a></li>
+<li><a title="libactors.actor.messages.ShutdownMessage" href="actor/messages.html#libactors.actor.messages.ShutdownMessage">ShutdownMessage</a></li>
+<li><a title="libactors.actor.messages.TimerConfiguration" href="actor/messages.html#libactors.actor.messages.TimerConfiguration">TimerConfiguration</a></li>
+<li><a title="libactors.actor.messages.TimerDoneMessage" href="actor/messages.html#libactors.actor.messages.TimerDoneMessage">TimerDoneMessage</a></li>
+<li><a title="libactors.app.actors.hello_world_actor.messages.LogMessage" href="app/actors/hello_world_actor/messages.html#libactors.app.actors.hello_world_actor.messages.LogMessage">LogMessage</a></li>
+<li><a title="libactors.app.actors.hello_world_actor.messages.PrepareMessage" href="app/actors/hello_world_actor/messages.html#libactors.app.actors.hello_world_actor.messages.PrepareMessage">PrepareMessage</a></li>
+<li><a title="libactors.app.actors.hello_world_actor.messages.SlowDownMessage" href="app/actors/hello_world_actor/messages.html#libactors.app.actors.hello_world_actor.messages.SlowDownMessage">SlowDownMessage</a></li>
+<li><a title="libactors.app.actors.hello_world_actor.messages.SpeedUpMessage" href="app/actors/hello_world_actor/messages.html#libactors.app.actors.hello_world_actor.messages.SpeedUpMessage">SpeedUpMessage</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="libactors.Message.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>d, use_bytes=False, use_enum=False, use_datetime=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="libactors.Message.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self, use_bytes=False, use_enum=False, use_datetime=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="libactors.actor" href="actor/index.html">libactors.actor</a></code></li>
+<li><code><a title="libactors.aio" href="aio/index.html">libactors.aio</a></code></li>
+<li><code><a title="libactors.app" href="app/index.html">libactors.app</a></code></li>
+<li><code><a title="libactors.context" href="context.html">libactors.context</a></code></li>
+<li><code><a title="libactors.core" href="core.html">libactors.core</a></code></li>
+<li><code><a title="libactors.log" href="log/index.html">libactors.log</a></code></li>
+<li><code><a title="libactors.message" href="message.html">libactors.message</a></code></li>
+<li><code><a title="libactors.testing" href="testing/index.html">libactors.testing</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="libactors.bind" href="#libactors.bind">bind</a></code></li>
+<li><code><a title="libactors.get_core" href="#libactors.get_core">get_core</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="libactors.Actor" href="#libactors.Actor">Actor</a></code></h4>
+<ul class="">
+<li><code><a title="libactors.Actor.actor_id" href="#libactors.Actor.actor_id">actor_id</a></code></li>
+<li><code><a title="libactors.Actor.cancel_actlet" href="#libactors.Actor.cancel_actlet">cancel_actlet</a></code></li>
+<li><code><a title="libactors.Actor.cancel_timer" href="#libactors.Actor.cancel_timer">cancel_timer</a></code></li>
+<li><code><a title="libactors.Actor.context" href="#libactors.Actor.context">context</a></code></li>
+<li><code><a title="libactors.Actor.create_actlet" href="#libactors.Actor.create_actlet">create_actlet</a></code></li>
+<li><code><a title="libactors.Actor.create_timer" href="#libactors.Actor.create_timer">create_timer</a></code></li>
+<li><code><a title="libactors.Actor.handle_actlet_done" href="#libactors.Actor.handle_actlet_done">handle_actlet_done</a></code></li>
+<li><code><a title="libactors.Actor.handle_shutdown" href="#libactors.Actor.handle_shutdown">handle_shutdown</a></code></li>
+<li><code><a title="libactors.Actor.handle_timer_done" href="#libactors.Actor.handle_timer_done">handle_timer_done</a></code></li>
+<li><code><a title="libactors.Actor.initialize" href="#libactors.Actor.initialize">initialize</a></code></li>
+<li><code><a title="libactors.Actor.is_actlet_exists" href="#libactors.Actor.is_actlet_exists">is_actlet_exists</a></code></li>
+<li><code><a title="libactors.Actor.is_shutdown" href="#libactors.Actor.is_shutdown">is_shutdown</a></code></li>
+<li><code><a title="libactors.Actor.is_timer_exists" href="#libactors.Actor.is_timer_exists">is_timer_exists</a></code></li>
+<li><code><a title="libactors.Actor.post" href="#libactors.Actor.post">post</a></code></li>
+<li><code><a title="libactors.Actor.serve" href="#libactors.Actor.serve">serve</a></code></li>
+<li><code><a title="libactors.Actor.stop" href="#libactors.Actor.stop">stop</a></code></li>
+<li><code><a title="libactors.Actor.tell_me" href="#libactors.Actor.tell_me">tell_me</a></code></li>
+<li><code><a title="libactors.Actor.wait_until_initialized" href="#libactors.Actor.wait_until_initialized">wait_until_initialized</a></code></li>
+<li><code><a title="libactors.Actor.wait_until_shutdown" href="#libactors.Actor.wait_until_shutdown">wait_until_shutdown</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="libactors.ActorProxy" href="#libactors.ActorProxy">ActorProxy</a></code></h4>
+<ul class="">
+<li><code><a title="libactors.ActorProxy.actor_id" href="#libactors.ActorProxy.actor_id">actor_id</a></code></li>
+<li><code><a title="libactors.ActorProxy.actor_type" href="#libactors.ActorProxy.actor_type">actor_type</a></code></li>
+<li><code><a title="libactors.ActorProxy.ask" href="#libactors.ActorProxy.ask">ask</a></code></li>
+<li><code><a title="libactors.ActorProxy.initialized" href="#libactors.ActorProxy.initialized">initialized</a></code></li>
+<li><code><a title="libactors.ActorProxy.tell" href="#libactors.ActorProxy.tell">tell</a></code></li>
+<li><code><a title="libactors.ActorProxy.wait_until_initialized" href="#libactors.ActorProxy.wait_until_initialized">wait_until_initialized</a></code></li>
+<li><code><a title="libactors.ActorProxy.wait_until_shutdown" href="#libactors.ActorProxy.wait_until_shutdown">wait_until_shutdown</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="libactors.Context" href="#libactors.Context">Context</a></code></h4>
+<ul class="two-column">
+<li><code><a title="libactors.Context.bind" href="#libactors.Context.bind">bind</a></code></li>
+<li><code><a title="libactors.Context.bind_function" href="#libactors.Context.bind_function">bind_function</a></code></li>
+<li><code><a title="libactors.Context.core" href="#libactors.Context.core">core</a></code></li>
+<li><code><a title="libactors.Context.create_actor" href="#libactors.Context.create_actor">create_actor</a></code></li>
+<li><code><a title="libactors.Context.debug" href="#libactors.Context.debug">debug</a></code></li>
+<li><code><a title="libactors.Context.envelope" href="#libactors.Context.envelope">envelope</a></code></li>
+<li><code><a title="libactors.Context.error" href="#libactors.Context.error">error</a></code></li>
+<li><code><a title="libactors.Context.exception" href="#libactors.Context.exception">exception</a></code></li>
+<li><code><a title="libactors.Context.fatal" href="#libactors.Context.fatal">fatal</a></code></li>
+<li><code><a title="libactors.Context.get_proxy" href="#libactors.Context.get_proxy">get_proxy</a></code></li>
+<li><code><a title="libactors.Context.identity" href="#libactors.Context.identity">identity</a></code></li>
+<li><code><a title="libactors.Context.info" href="#libactors.Context.info">info</a></code></li>
+<li><code><a title="libactors.Context.log" href="#libactors.Context.log">log</a></code></li>
+<li><code><a title="libactors.Context.sender" href="#libactors.Context.sender">sender</a></code></li>
+<li><code><a title="libactors.Context.warning" href="#libactors.Context.warning">warning</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="libactors.Core" href="#libactors.Core">Core</a></code></h4>
+<ul class="">
+<li><code><a title="libactors.Core.actors" href="#libactors.Core.actors">actors</a></code></li>
+<li><code><a title="libactors.Core.context" href="#libactors.Core.context">context</a></code></li>
+<li><code><a title="libactors.Core.create_actor" href="#libactors.Core.create_actor">create_actor</a></code></li>
+<li><code><a title="libactors.Core.get_proxy" href="#libactors.Core.get_proxy">get_proxy</a></code></li>
+<li><code><a title="libactors.Core.is_actor_type_exists" href="#libactors.Core.is_actor_type_exists">is_actor_type_exists</a></code></li>
+<li><code><a title="libactors.Core.remove_actor" href="#libactors.Core.remove_actor">remove_actor</a></code></li>
+<li><code><a title="libactors.Core.set_context" href="#libactors.Core.set_context">set_context</a></code></li>
+<li><code><a title="libactors.Core.shutdown" href="#libactors.Core.shutdown">shutdown</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="libactors.Envelope" href="#libactors.Envelope">Envelope</a></code></h4>
+<ul class="two-column">
+<li><code><a title="libactors.Envelope.from_dict" href="#libactors.Envelope.from_dict">from_dict</a></code></li>
+<li><code><a title="libactors.Envelope.id" href="#libactors.Envelope.id">id</a></code></li>
+<li><code><a title="libactors.Envelope.message" href="#libactors.Envelope.message">message</a></code></li>
+<li><code><a title="libactors.Envelope.receiver" href="#libactors.Envelope.receiver">receiver</a></code></li>
+<li><code><a title="libactors.Envelope.reply_to" href="#libactors.Envelope.reply_to">reply_to</a></code></li>
+<li><code><a title="libactors.Envelope.sender" href="#libactors.Envelope.sender">sender</a></code></li>
+<li><code><a title="libactors.Envelope.to_dict" href="#libactors.Envelope.to_dict">to_dict</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="libactors.Message" href="#libactors.Message">Message</a></code></h4>
+<ul class="">
+<li><code><a title="libactors.Message.from_dict" href="#libactors.Message.from_dict">from_dict</a></code></li>
+<li><code><a title="libactors.Message.to_dict" href="#libactors.Message.to_dict">to_dict</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
