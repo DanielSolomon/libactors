@@ -1,0 +1,2 @@
+class AioException(Exception):
+    pass

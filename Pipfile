@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+coverage = "*"
+flake8 = "*"
+pytest = "*"
+pytest-asyncio = "*"
+pytest-coverage = "*"
+mypy = "*"
+pdoc3 = "*"
+
+[packages]
+click = "==7.0"
+mashumaro = "==1.12"
+sentinels = "==1.0.0"
+structlog = "*"
+
+[requires]
+python_version = "3.8"

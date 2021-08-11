@@ -1,0 +1,4 @@
+Click==7.0
+mashumaro==1.12
+sentinels==1.0.0
+structlog
