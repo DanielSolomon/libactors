@@ -21,6 +21,7 @@ $ pipenv --python 3.8
 $ pipenv shell
 $ pipenv install --dev
 $ python -m pytest tests/ # All test should pass!
+$ python -m libactors.app run # <Ctrl-C> to stop (wait a few seconds).
 ```
 
 ## Documentation
